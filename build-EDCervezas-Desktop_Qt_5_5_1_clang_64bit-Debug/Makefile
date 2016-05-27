@@ -174,6 +174,7 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
+		../EDCervezas/.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -195,7 +196,9 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/lex.prf \
-		../EDCervezas/EDCervezas.pro ../EDCervezas/ventanaprincipal.h ../EDCervezas/main.cpp \
+		../EDCervezas/EDCervezas.pro ../EDCervezas/ventanaprincipal.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/dlinkedlist.h ../EDCervezas/main.cpp \
 		../EDCervezas/ventanaprincipal.cpp
 QMAKE_TARGET  = EDCervezas
 DESTDIR       = #avoid trailing-slash linebreak
@@ -359,6 +362,7 @@ Makefile: ../EDCervezas/EDCervezas.pro ../../../Qt/5.5/clang_64/mkspecs/macx-cla
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -506,6 +510,7 @@ Makefile: ../EDCervezas/EDCervezas.pro ../../../Qt/5.5/clang_64/mkspecs/macx-cla
 ../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -560,7 +565,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui $(DISTDIR)/
 

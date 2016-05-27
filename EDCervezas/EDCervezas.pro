@@ -15,6 +15,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         ventanaprincipal.cpp
 
-HEADERS  += ventanaprincipal.h
+HEADERS  += ventanaprincipal.h \
+    dnode.h \
+    dlinkedlist.h
 
 FORMS    += ventanaprincipal.ui
