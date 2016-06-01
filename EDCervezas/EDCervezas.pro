@@ -14,14 +14,29 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         ventanaprincipal.cpp \
+<<<<<<< HEAD
     listaadyacencia.cpp \
     nodocerveza.cpp
+=======
+    registrarcerveza.cpp \
+    registrarfamiliacerveza.cpp \
+    registrarestilocerveza.cpp
+>>>>>>> origin/master
 
 HEADERS  += ventanaprincipal.h \
     dnode.h \
     dlinkedlist.h \
     arraylist.h \
+<<<<<<< HEAD
     listaadyacencia.h \
     nodocerveza.h
+=======
+    registrarcerveza.h \
+    registrarfamiliacerveza.h \
+    registrarestilocerveza.h
+>>>>>>> origin/master
 
-FORMS    += ventanaprincipal.ui
+FORMS    += ventanaprincipal.ui \
+    registrarcerveza.ui \
+    registrarfamiliacerveza.ui \
+    registrarestilocerveza.ui
