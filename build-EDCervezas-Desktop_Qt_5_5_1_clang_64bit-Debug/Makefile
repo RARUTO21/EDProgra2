@@ -198,7 +198,8 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/lex.prf \
 		../EDCervezas/EDCervezas.pro ../EDCervezas/ventanaprincipal.h \
 		../EDCervezas/dnode.h \
-		../EDCervezas/dlinkedlist.h ../EDCervezas/main.cpp \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/arraylist.h ../EDCervezas/main.cpp \
 		../EDCervezas/ventanaprincipal.cpp
 QMAKE_TARGET  = EDCervezas
 DESTDIR       = #avoid trailing-slash linebreak
@@ -565,7 +566,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui $(DISTDIR)/
 
@@ -625,7 +626,11 @@ main.o: ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EDCervezas/main.cpp
 
 ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprincipal.h \
