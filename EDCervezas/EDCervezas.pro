@@ -13,11 +13,20 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        ventanaprincipal.cpp
+        ventanaprincipal.cpp \
+    registrarcerveza.cpp \
+    registrarfamiliacerveza.cpp \
+    registrarestilocerveza.cpp
 
 HEADERS  += ventanaprincipal.h \
     dnode.h \
     dlinkedlist.h \
-    arraylist.h
+    arraylist.h \
+    registrarcerveza.h \
+    registrarfamiliacerveza.h \
+    registrarestilocerveza.h
 
-FORMS    += ventanaprincipal.ui
+FORMS    += ventanaprincipal.ui \
+    registrarcerveza.ui \
+    registrarfamiliacerveza.ui \
+    registrarestilocerveza.ui
