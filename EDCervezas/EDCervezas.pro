@@ -13,11 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        ventanaprincipal.cpp
+        ventanaprincipal.cpp \
+    listaadyacencia.cpp \
+    nodocerveza.cpp
 
 HEADERS  += ventanaprincipal.h \
     dnode.h \
     dlinkedlist.h \
-    arraylist.h
+    arraylist.h \
+    listaadyacencia.h \
+    nodocerveza.h
 
 FORMS    += ventanaprincipal.ui

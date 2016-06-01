@@ -49,9 +49,13 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../EDCervezas/main.cpp \
-		../EDCervezas/ventanaprincipal.cpp moc_ventanaprincipal.cpp
+		../EDCervezas/ventanaprincipal.cpp \
+		../EDCervezas/listaadyacencia.cpp \
+		../EDCervezas/nodocerveza.cpp moc_ventanaprincipal.cpp
 OBJECTS       = main.o \
 		ventanaprincipal.o \
+		listaadyacencia.o \
+		nodocerveza.o \
 		moc_ventanaprincipal.o
 DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/qdevice.pri \
@@ -199,8 +203,12 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../EDCervezas/EDCervezas.pro ../EDCervezas/ventanaprincipal.h \
 		../EDCervezas/dnode.h \
 		../EDCervezas/dlinkedlist.h \
-		../EDCervezas/arraylist.h ../EDCervezas/main.cpp \
-		../EDCervezas/ventanaprincipal.cpp
+		../EDCervezas/arraylist.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/nodocerveza.h ../EDCervezas/main.cpp \
+		../EDCervezas/ventanaprincipal.cpp \
+		../EDCervezas/listaadyacencia.cpp \
+		../EDCervezas/nodocerveza.cpp
 QMAKE_TARGET  = EDCervezas
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = EDCervezas.app/Contents/MacOS/EDCervezas
@@ -566,8 +574,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h ../EDCervezas/listaadyacencia.h ../EDCervezas/nodocerveza.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/listaadyacencia.cpp ../EDCervezas/nodocerveza.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui $(DISTDIR)/
 
 
@@ -630,7 +638,8 @@ main.o: ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.h \
 		../EDCervezas/dlinkedlist.h \
 		../EDCervezas/dnode.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../EDCervezas/arraylist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EDCervezas/main.cpp
 
 ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprincipal.h \
@@ -638,6 +647,16 @@ ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprin
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		ui_ventanaprincipal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaprincipal.o ../EDCervezas/ventanaprincipal.cpp
+
+listaadyacencia.o: ../EDCervezas/listaadyacencia.cpp ../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listaadyacencia.o ../EDCervezas/listaadyacencia.cpp
+
+nodocerveza.o: ../EDCervezas/nodocerveza.cpp ../EDCervezas/nodocerveza.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nodocerveza.o ../EDCervezas/nodocerveza.cpp
 
 moc_ventanaprincipal.o: moc_ventanaprincipal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaprincipal.o moc_ventanaprincipal.cpp

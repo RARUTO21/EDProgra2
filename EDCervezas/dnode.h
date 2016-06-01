@@ -20,6 +20,8 @@ public:
     } // Constructor sin el valor del nodo
 
 
+
+
     E element; // Valor del nodo
     DNode<E>* previous; // Puntero a anterior nodo
     DNode<E>* next; // Puntero a siguiente nodo
