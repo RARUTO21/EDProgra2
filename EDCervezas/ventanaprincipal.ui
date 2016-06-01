@@ -13,9 +13,7 @@
   <property name="windowTitle">
    <string>VentanaPrincipal</string>
   </property>
-<<<<<<< HEAD
   <widget class="QWidget" name="centralWidget"/>
-=======
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="btnRegCerveza">
     <property name="geometry">

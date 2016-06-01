@@ -51,12 +51,24 @@ OBJECTS_DIR   = ./
 SOURCES       = ../EDCervezas/main.cpp \
 		../EDCervezas/ventanaprincipal.cpp \
 		../EDCervezas/listaadyacencia.cpp \
-		../EDCervezas/nodocerveza.cpp moc_ventanaprincipal.cpp
+		../EDCervezas/nodocerveza.cpp \
+		../EDCervezas/registrarcerveza.cpp \
+		../EDCervezas/registrarfamiliacerveza.cpp \
+		../EDCervezas/registrarestilocerveza.cpp moc_ventanaprincipal.cpp \
+		moc_registrarcerveza.cpp \
+		moc_registrarfamiliacerveza.cpp \
+		moc_registrarestilocerveza.cpp
 OBJECTS       = main.o \
 		ventanaprincipal.o \
 		listaadyacencia.o \
 		nodocerveza.o \
-		moc_ventanaprincipal.o
+		registrarcerveza.o \
+		registrarfamiliacerveza.o \
+		registrarestilocerveza.o \
+		moc_ventanaprincipal.o \
+		moc_registrarcerveza.o \
+		moc_registrarfamiliacerveza.o \
+		moc_registrarestilocerveza.o
 DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -178,7 +190,6 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
-		../EDCervezas/.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -205,10 +216,16 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../EDCervezas/dlinkedlist.h \
 		../EDCervezas/arraylist.h \
 		../EDCervezas/listaadyacencia.h \
-		../EDCervezas/nodocerveza.h ../EDCervezas/main.cpp \
+		../EDCervezas/nodocerveza.h \
+		../EDCervezas/registrarcerveza.h \
+		../EDCervezas/registrarfamiliacerveza.h \
+		../EDCervezas/registrarestilocerveza.h ../EDCervezas/main.cpp \
 		../EDCervezas/ventanaprincipal.cpp \
 		../EDCervezas/listaadyacencia.cpp \
-		../EDCervezas/nodocerveza.cpp
+		../EDCervezas/nodocerveza.cpp \
+		../EDCervezas/registrarcerveza.cpp \
+		../EDCervezas/registrarfamiliacerveza.cpp \
+		../EDCervezas/registrarestilocerveza.cpp
 QMAKE_TARGET  = EDCervezas
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = EDCervezas.app/Contents/MacOS/EDCervezas
@@ -246,7 +263,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_ventanaprincipal.h $(OBJECTS)  
+$(TARGET): ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h $(OBJECTS)  
 	@test -d EDCervezas.app/Contents/MacOS/ || mkdir -p EDCervezas.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -371,7 +388,6 @@ Makefile: ../EDCervezas/EDCervezas.pro ../../../Qt/5.5/clang_64/mkspecs/macx-cla
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -519,7 +535,6 @@ Makefile: ../EDCervezas/EDCervezas.pro ../../../Qt/5.5/clang_64/mkspecs/macx-cla
 ../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -574,9 +589,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h ../EDCervezas/listaadyacencia.h ../EDCervezas/nodocerveza.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/listaadyacencia.cpp ../EDCervezas/nodocerveza.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h ../EDCervezas/listaadyacencia.h ../EDCervezas/nodocerveza.h ../EDCervezas/registrarcerveza.h ../EDCervezas/registrarfamiliacerveza.h ../EDCervezas/registrarestilocerveza.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/listaadyacencia.cpp ../EDCervezas/nodocerveza.cpp ../EDCervezas/registrarcerveza.cpp ../EDCervezas/registrarfamiliacerveza.cpp ../EDCervezas/registrarestilocerveza.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui ../EDCervezas/registrarcerveza.ui ../EDCervezas/registrarfamiliacerveza.ui ../EDCervezas/registrarestilocerveza.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -602,21 +617,45 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_ventanaprincipal.cpp
+compiler_moc_header_make_all: moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_registrarfamiliacerveza.cpp moc_registrarestilocerveza.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_ventanaprincipal.cpp
+	-$(DEL_FILE) moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_registrarfamiliacerveza.cpp moc_registrarestilocerveza.cpp
 moc_ventanaprincipal.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../EDCervezas/ventanaprincipal.h
 	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaprincipal.h -o moc_ventanaprincipal.cpp
 
+moc_registrarcerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../EDCervezas/registrarcerveza.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarcerveza.h -o moc_registrarcerveza.cpp
+
+moc_registrarfamiliacerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../EDCervezas/registrarfamiliacerveza.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarfamiliacerveza.h -o moc_registrarfamiliacerveza.cpp
+
+moc_registrarestilocerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../EDCervezas/registrarestilocerveza.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarestilocerveza.h -o moc_registrarestilocerveza.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_ventanaprincipal.h
+compiler_uic_make_all: ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_ventanaprincipal.h
+	-$(DEL_FILE) ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h
 ui_ventanaprincipal.h: ../EDCervezas/ventanaprincipal.ui
 	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaprincipal.ui -o ui_ventanaprincipal.h
+
+ui_registrarcerveza.h: ../EDCervezas/registrarcerveza.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarcerveza.ui -o ui_registrarcerveza.h
+
+ui_registrarfamiliacerveza.h: ../EDCervezas/registrarfamiliacerveza.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarfamiliacerveza.ui -o ui_registrarfamiliacerveza.h
+
+ui_registrarestilocerveza.h: ../EDCervezas/registrarestilocerveza.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarestilocerveza.ui -o ui_registrarestilocerveza.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -639,13 +678,19 @@ main.o: ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.h \
 		../EDCervezas/dnode.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../EDCervezas/arraylist.h
+		../EDCervezas/arraylist.h \
+		../EDCervezas/nodocerveza.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EDCervezas/main.cpp
 
 ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_ventanaprincipal.h
+		ui_ventanaprincipal.h \
+		../EDCervezas/registrarcerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../EDCervezas/registrarfamiliacerveza.h \
+		../EDCervezas/registrarestilocerveza.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaprincipal.o ../EDCervezas/ventanaprincipal.cpp
 
 listaadyacencia.o: ../EDCervezas/listaadyacencia.cpp ../EDCervezas/listaadyacencia.h \
@@ -658,8 +703,44 @@ listaadyacencia.o: ../EDCervezas/listaadyacencia.cpp ../EDCervezas/listaadyacenc
 nodocerveza.o: ../EDCervezas/nodocerveza.cpp ../EDCervezas/nodocerveza.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nodocerveza.o ../EDCervezas/nodocerveza.cpp
 
+registrarcerveza.o: ../EDCervezas/registrarcerveza.cpp ../EDCervezas/registrarcerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_registrarcerveza.h \
+		../EDCervezas/ventanaprincipal.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarcerveza.o ../EDCervezas/registrarcerveza.cpp
+
+registrarfamiliacerveza.o: ../EDCervezas/registrarfamiliacerveza.cpp ../EDCervezas/registrarfamiliacerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_registrarfamiliacerveza.h \
+		../EDCervezas/ventanaprincipal.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarfamiliacerveza.o ../EDCervezas/registrarfamiliacerveza.cpp
+
+registrarestilocerveza.o: ../EDCervezas/registrarestilocerveza.cpp ../EDCervezas/registrarestilocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_registrarestilocerveza.h \
+		../EDCervezas/ventanaprincipal.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarestilocerveza.o ../EDCervezas/registrarestilocerveza.cpp
+
 moc_ventanaprincipal.o: moc_ventanaprincipal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaprincipal.o moc_ventanaprincipal.cpp
+
+moc_registrarcerveza.o: moc_registrarcerveza.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarcerveza.o moc_registrarcerveza.cpp
+
+moc_registrarfamiliacerveza.o: moc_registrarfamiliacerveza.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarfamiliacerveza.o moc_registrarfamiliacerveza.cpp
+
+moc_registrarestilocerveza.o: moc_registrarestilocerveza.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarestilocerveza.o moc_registrarestilocerveza.cpp
 
 ####### Install
 
