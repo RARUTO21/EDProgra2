@@ -24,6 +24,12 @@ private slots:
 
     void on_btnRegEstilo_clicked();
 
+    void on_btnBuscarCerveza_clicked();
+
+    void on_btnListaCervezas_clicked();
+
+    void on_btnBorrarDatos_clicked();
+
 private:
     Ui::VentanaPrincipal *ui;
 };

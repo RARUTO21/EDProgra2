@@ -3,6 +3,9 @@
 #include "registrarcerveza.h"
 #include "registrarfamiliacerveza.h"
 #include "registrarestilocerveza.h"
+#include "buscarcerveza.h"
+#include "listacervezasfamilia.h"
+#include "borrardatos.h"
 
 VentanaPrincipal::VentanaPrincipal(QWidget *parent) :
     QMainWindow(parent),
@@ -40,4 +43,25 @@ void VentanaPrincipal::on_btnRegEstilo_clicked()
    RegistrarEstiloCerveza * VentanaPrincipal = new RegistrarEstiloCerveza();
    VentanaPrincipal->show();
    close();
+}
+
+void VentanaPrincipal::on_btnBuscarCerveza_clicked()
+{
+    BuscarCerveza * VentanaPrincipal = new BuscarCerveza();
+    VentanaPrincipal->show();
+    close();
+}
+
+void VentanaPrincipal::on_btnListaCervezas_clicked()
+{
+    ListaCervezasFamilia * VentanaPrincipal = new ListaCervezasFamilia();
+    VentanaPrincipal->show();
+    close();
+}
+
+void VentanaPrincipal::on_btnBorrarDatos_clicked()
+{
+    BorrarDatos * VentanaPrincipal = new BorrarDatos();
+    VentanaPrincipal->show();
+    close();
 }
