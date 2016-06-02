@@ -13,7 +13,9 @@
   <property name="windowTitle">
    <string>VentanaPrincipal</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 170, 127);</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="btnRegCerveza">
     <property name="geometry">
@@ -23,6 +25,9 @@
       <width>141</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Registrar cerveza</string>
@@ -76,6 +81,9 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string>Buscar cerveza</string>
     </property>
@@ -88,6 +96,9 @@
       <width>141</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Lista cervezas por familia</string>
@@ -107,7 +118,6 @@
     </property>
    </widget>
   </widget>
->>>>>>> origin/master
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
