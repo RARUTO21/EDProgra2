@@ -7,6 +7,8 @@
 #include "dnode.h"
 #include "nodocerveza.h"
 
+#include "listaadyacencia.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -42,28 +44,6 @@ int main(int argc, char *argv[])
         qDebug()<<"Posicion: "<<i<<" - Valor: "<<miLista.getElement()<<endl;
     }
 
-
-    //DLinkedList< *DLinkedList<int> > listasDeNumeros;
-    //listasDeNumeros.append(&miLista);
-    //miLista.goToStart();
-    //qDebug()<<miLista.getElement()<<endl;
-    /*
-    ArrayList<int> *lista;
-
-    lista->append(90);
-    lista->append(45);
-    lista->append(75);
-    lista->append(20);
-    */
-    /*
-    for(int i = 0; i<lista.getSize();i++){
-        lista.goToPos(i);
-        qDebug()<<"Posicion: "<<i<<" Valor: "<<lista.getElement()<<endl;
-
-    }
-
-    qDebug()<<"---END---"<<endl; */
-
     ArrayList< DLinkedList<int>* > listaListas;
 
     listaListas.insert(&miLista);
@@ -76,12 +56,26 @@ int main(int argc, char *argv[])
 
     }
 
-    qDebug()<<"Elemento: "<<listaListas.getElement()->getElement()<<endl;
+    //qDebug()<<"Elemento: "<<listaListas.getElement()->getElement()<<endl;
 
-    //Esto que sigue no funciona
-    //NodoCerveza pilsen = new NodoCerveza("Pilse","Sabe fea", "Normal", "50 min", "25 grados centigrados","amarillo","chichera","panzon",1000.0);
-    //ArrayList<NodoCerveza* > cervezas;
-    //cervezas.append(&pilsen);
+
+    ListaAdyacencia adyacencia;
+
+    adyacencia.agregarNodo(9);
+    adyacencia.agregarNodo(4);
+    adyacencia.agregarNodo(56);
+
+    //adyacencia.obtenerValorInicial(3);
+
+    //adyacencia.enlazarNodo(56,23);
+    //adyacencia.enlazarNodo(56,80);
+    /*
+    qDebug()<<"Lista de adyacencia: \n\n Valor: "<<56<<endl<<"Vecinos: "<<endl;
+    for(int i = 1; i< adyacencia.obtenerVecinos(56)->getSize(); i++){
+        adyacencia.obtenerVecinos(56)->goToPos(i);
+        qDebug()<<adyacencia.obtenerVecinos(56)->getElement()<<endl;
+    }
+    */
 
 
     return a.exec();

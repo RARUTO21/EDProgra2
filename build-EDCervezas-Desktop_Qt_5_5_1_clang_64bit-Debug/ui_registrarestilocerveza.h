@@ -23,6 +23,7 @@ class Ui_RegistrarEstiloCerveza
 {
 public:
     QPushButton *btnatras3;
+    QPushButton *btnguardar3;
 
     void setupUi(QWidget *RegistrarEstiloCerveza)
     {
@@ -32,6 +33,9 @@ public:
         btnatras3 = new QPushButton(RegistrarEstiloCerveza);
         btnatras3->setObjectName(QStringLiteral("btnatras3"));
         btnatras3->setGeometry(QRect(300, 120, 75, 23));
+        btnguardar3 = new QPushButton(RegistrarEstiloCerveza);
+        btnguardar3->setObjectName(QStringLiteral("btnguardar3"));
+        btnguardar3->setGeometry(QRect(190, 120, 75, 23));
 
         retranslateUi(RegistrarEstiloCerveza);
 
@@ -42,6 +46,7 @@ public:
     {
         RegistrarEstiloCerveza->setWindowTitle(QApplication::translate("RegistrarEstiloCerveza", "Form", 0));
         btnatras3->setText(QApplication::translate("RegistrarEstiloCerveza", "atr\303\241s", 0));
+        btnguardar3->setText(QApplication::translate("RegistrarEstiloCerveza", "guardar", 0));
     } // retranslateUi
 
 };

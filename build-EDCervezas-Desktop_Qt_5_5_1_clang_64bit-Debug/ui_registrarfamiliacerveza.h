@@ -23,6 +23,7 @@ class Ui_RegistrarFamiliaCerveza
 {
 public:
     QPushButton *btnatras2;
+    QPushButton *btnguardar2;
 
     void setupUi(QWidget *RegistrarFamiliaCerveza)
     {
@@ -32,6 +33,9 @@ public:
         btnatras2 = new QPushButton(RegistrarFamiliaCerveza);
         btnatras2->setObjectName(QStringLiteral("btnatras2"));
         btnatras2->setGeometry(QRect(410, 150, 75, 23));
+        btnguardar2 = new QPushButton(RegistrarFamiliaCerveza);
+        btnguardar2->setObjectName(QStringLiteral("btnguardar2"));
+        btnguardar2->setGeometry(QRect(290, 150, 75, 23));
 
         retranslateUi(RegistrarFamiliaCerveza);
 
@@ -42,6 +46,7 @@ public:
     {
         RegistrarFamiliaCerveza->setWindowTitle(QApplication::translate("RegistrarFamiliaCerveza", "Form", 0));
         btnatras2->setText(QApplication::translate("RegistrarFamiliaCerveza", "atr\303\241s", 0));
+        btnguardar2->setText(QApplication::translate("RegistrarFamiliaCerveza", "guardar", 0));
     } // retranslateUi
 
 };

@@ -12,14 +12,15 @@ public:
     ListaAdyacencia();
     ~ListaAdyacencia();
 
-    void agregarNodo(NodoCerveza nodo);
-    void enlazarNodo(NodoCerveza nodo1, NodoCerveza nodo2);
+    void agregarNodo(int keyValue);
+    void enlazarNodo(int value1, int value2);
+    void obtenerValorInicial(int valor);
 
-    DLinkedList<NodoCerveza> * obtenerVecinos(NodoCerveza nodo);
+    DLinkedList<int> * obtenerVecinos(int keyValue);
 
 
 private:
-    ArrayList< DLinkedList<NodoCerveza>* > listaPrincipal;
+    ArrayList< DLinkedList<int>* > listaPrincipal;
 
 };
 

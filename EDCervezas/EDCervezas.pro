@@ -33,7 +33,9 @@ HEADERS  += ventanaprincipal.h \
     registrarestilocerveza.h \
     buscarcerveza.h \
     listacervezasfamilia.h \
-    borrardatos.h
+    borrardatos.h \
+    bstnode.h \
+    bstree.h
 FORMS    += ventanaprincipal.ui \
     registrarcerveza.ui \
     registrarfamiliacerveza.ui \
