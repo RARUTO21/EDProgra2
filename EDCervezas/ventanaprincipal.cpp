@@ -31,19 +31,9 @@ void VentanaPrincipal::on_btnsalir_clicked()
     close();
 }
 
-void VentanaPrincipal::on_btnRegFamilia_clicked()
-{
-    RegistrarFamiliaCerveza * VentanaPrincipal = new RegistrarFamiliaCerveza();
-    VentanaPrincipal->show();
-    close();
-}
 
-void VentanaPrincipal::on_btnRegEstilo_clicked()
-{
-   RegistrarEstiloCerveza * VentanaPrincipal = new RegistrarEstiloCerveza();
-   VentanaPrincipal->show();
-   close();
-}
+
+
 
 void VentanaPrincipal::on_btnBuscarCerveza_clicked()
 {

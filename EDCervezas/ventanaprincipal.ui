@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>523</width>
-    <height>372</height>
+    <width>509</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,8 +36,8 @@
    <widget class="QPushButton" name="btnsalir">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>280</y>
+      <x>350</x>
+      <y>250</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -46,37 +46,11 @@
      <string>salir</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRegFamilia">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Registar familia cerveza</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnRegEstilo">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>170</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Registrar estilo cerveza</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnBuscarCerveza">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>70</y>
+      <x>40</x>
+      <y>130</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -91,8 +65,8 @@
    <widget class="QPushButton" name="btnListaCervezas">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>120</y>
+      <x>260</x>
+      <y>70</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -107,8 +81,8 @@
    <widget class="QPushButton" name="btnBorrarDatos">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>170</y>
+      <x>260</x>
+      <y>130</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -123,7 +97,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>523</width>
+     <width>509</width>
      <height>21</height>
     </rect>
    </property>
