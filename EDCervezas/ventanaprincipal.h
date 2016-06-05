@@ -36,6 +36,12 @@ private slots:
 
     void on_btnConsultarFamilia_clicked();
 
+
+
+    void on_btnEnlazarFamiliaEstilo_clicked();
+
+    void on_btnEnlazarEstiloCerveza_clicked();
+
 private:
     Ui::VentanaPrincipal *ui;
     Grafo grafo;

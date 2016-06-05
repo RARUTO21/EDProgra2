@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
+    <width>756</width>
     <height>359</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
    <widget class="QPushButton" name="btnsalir">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>560</x>
       <y>260</y>
       <width>75</width>
       <height>23</height>
@@ -65,8 +65,8 @@
    <widget class="QPushButton" name="btnListaCervezas">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>50</y>
+      <x>600</x>
+      <y>40</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -81,8 +81,8 @@
    <widget class="QPushButton" name="btnBorrarDatos">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>110</y>
+      <x>590</x>
+      <y>130</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -149,13 +149,52 @@
      <string>Consultar Familia</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>40</y>
+      <width>171</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Enlazar</string>
+    </property>
+    <widget class="QPushButton" name="btnEnlazarFamiliaEstilo">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Familia - Estilo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnEnlazarEstiloCerveza">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estilo - Cerveza</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>609</width>
+     <width>756</width>
      <height>22</height>
     </rect>
    </property>

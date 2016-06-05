@@ -48,3 +48,13 @@ void ListaAdyacencia::eliminarNodo(int key){
     mapa.remove(key);
     //qDebug()<<"Nodo: "<<key<<" Eliminado! Ahora no tiene vecinos: "<<mapa[key];
 }
+
+
+bool ListaAdyacencia::esVecino(int key, int value){
+    for(int i = 0; i < mapa[key].size(); i++){
+        if(mapa[key][i] == value){
+            return true;
+        }
+    }
+    return false;
+}

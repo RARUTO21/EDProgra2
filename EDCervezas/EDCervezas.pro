@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     ventanaregistrarcerveza.cpp \
     ventanaconsultarcerveza.cpp \
     ventanaconsultarfamilia.cpp \
-    ventanaconsultarestilo.cpp
+    ventanaconsultarestilo.cpp \
+    ventanaenlazarfamiliaestilo.cpp \
+    ventanaenlazarestilocerveza.cpp
 HEADERS  += ventanaprincipal.h \
     dnode.h \
     dlinkedlist.h \
@@ -45,7 +47,9 @@ HEADERS  += ventanaprincipal.h \
     ventanaregistrarcerveza.h \
     ventanaconsultarcerveza.h \
     ventanaconsultarfamilia.h \
-    ventanaconsultarestilo.h
+    ventanaconsultarestilo.h \
+    ventanaenlazarfamiliaestilo.h \
+    ventanaenlazarestilocerveza.h
 FORMS    += ventanaprincipal.ui \
     registrarcerveza.ui \
     buscarcerveza.ui \
@@ -56,4 +60,6 @@ FORMS    += ventanaprincipal.ui \
     ventanaregistrarcerveza.ui \
     ventanaconsultarcerveza.ui \
     ventanaconsultarfamilia.ui \
-    ventanaconsultarestilo.ui
+    ventanaconsultarestilo.ui \
+    ventanaenlazarfamiliaestilo.ui \
+    ventanaenlazarestilocerveza.ui

@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -36,6 +37,9 @@ public:
     QPushButton *btnRegistrarCerveza;
     QPushButton *btnConsultarEstilo;
     QPushButton *btnConsultarFamilia;
+    QGroupBox *groupBox;
+    QPushButton *btnEnlazarFamiliaEstilo;
+    QPushButton *btnEnlazarEstiloCerveza;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -44,7 +48,7 @@ public:
     {
         if (VentanaPrincipal->objectName().isEmpty())
             VentanaPrincipal->setObjectName(QStringLiteral("VentanaPrincipal"));
-        VentanaPrincipal->resize(609, 359);
+        VentanaPrincipal->resize(756, 359);
         VentanaPrincipal->setStyleSheet(QStringLiteral("background-color: rgb(85, 170, 127);"));
         centralWidget = new QWidget(VentanaPrincipal);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -54,18 +58,18 @@ public:
         btnRegistrarFamilia->setStyleSheet(QStringLiteral(""));
         btnsalir = new QPushButton(centralWidget);
         btnsalir->setObjectName(QStringLiteral("btnsalir"));
-        btnsalir->setGeometry(QRect(420, 260, 75, 23));
+        btnsalir->setGeometry(QRect(560, 260, 75, 23));
         btnBuscarCerveza = new QPushButton(centralWidget);
         btnBuscarCerveza->setObjectName(QStringLiteral("btnBuscarCerveza"));
         btnBuscarCerveza->setGeometry(QRect(220, 210, 141, 41));
         btnBuscarCerveza->setStyleSheet(QStringLiteral(""));
         btnListaCervezas = new QPushButton(centralWidget);
         btnListaCervezas->setObjectName(QStringLiteral("btnListaCervezas"));
-        btnListaCervezas->setGeometry(QRect(430, 50, 141, 41));
+        btnListaCervezas->setGeometry(QRect(600, 40, 141, 41));
         btnListaCervezas->setStyleSheet(QStringLiteral(""));
         btnBorrarDatos = new QPushButton(centralWidget);
         btnBorrarDatos->setObjectName(QStringLiteral("btnBorrarDatos"));
-        btnBorrarDatos->setGeometry(QRect(430, 110, 141, 41));
+        btnBorrarDatos->setGeometry(QRect(590, 130, 141, 41));
         btnRegistrarEstilo = new QPushButton(centralWidget);
         btnRegistrarEstilo->setObjectName(QStringLiteral("btnRegistrarEstilo"));
         btnRegistrarEstilo->setEnabled(false);
@@ -80,10 +84,19 @@ public:
         btnConsultarFamilia = new QPushButton(centralWidget);
         btnConsultarFamilia->setObjectName(QStringLiteral("btnConsultarFamilia"));
         btnConsultarFamilia->setGeometry(QRect(220, 50, 141, 41));
+        groupBox = new QGroupBox(centralWidget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(390, 40, 171, 141));
+        btnEnlazarFamiliaEstilo = new QPushButton(groupBox);
+        btnEnlazarFamiliaEstilo->setObjectName(QStringLiteral("btnEnlazarFamiliaEstilo"));
+        btnEnlazarFamiliaEstilo->setGeometry(QRect(20, 30, 141, 41));
+        btnEnlazarEstiloCerveza = new QPushButton(groupBox);
+        btnEnlazarEstiloCerveza->setObjectName(QStringLiteral("btnEnlazarEstiloCerveza"));
+        btnEnlazarEstiloCerveza->setGeometry(QRect(20, 90, 141, 41));
         VentanaPrincipal->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(VentanaPrincipal);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 609, 22));
+        menuBar->setGeometry(QRect(0, 0, 756, 22));
         VentanaPrincipal->setMenuBar(menuBar);
         mainToolBar = new QToolBar(VentanaPrincipal);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -109,6 +122,9 @@ public:
         btnRegistrarCerveza->setText(QApplication::translate("VentanaPrincipal", "Registrar Cerveza", 0));
         btnConsultarEstilo->setText(QApplication::translate("VentanaPrincipal", "Consultar Estilo", 0));
         btnConsultarFamilia->setText(QApplication::translate("VentanaPrincipal", "Consultar Familia", 0));
+        groupBox->setTitle(QApplication::translate("VentanaPrincipal", "Enlazar", 0));
+        btnEnlazarFamiliaEstilo->setText(QApplication::translate("VentanaPrincipal", "Familia - Estilo", 0));
+        btnEnlazarEstiloCerveza->setText(QApplication::translate("VentanaPrincipal", "Estilo - Cerveza", 0));
     } // retranslateUi
 
 };

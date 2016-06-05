@@ -23,6 +23,8 @@ public:
     void eliminarVecino(int key, int value);
     void eliminarNodo(int key);
 
+    bool esVecino(int key, int value);
+
 private:
     QMap<int,QVector<int> > mapa;
 

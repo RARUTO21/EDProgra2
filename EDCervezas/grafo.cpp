@@ -174,3 +174,45 @@ QVector<NodoCerveza* > Grafo::obtenerCervezasDeEstilo(QString estilo){
     }
     return temp;
 }
+
+bool Grafo::sonVecinos(QString nodo1, QString nodo2){
+    int key;
+    int value;
+
+    for(int i = 0; i< counter; i++){
+        if(arbol.find(i)->getNombre() == nodo1){
+            key = i;
+        }
+        else{
+            if(arbol.find(i)->getNombre() == nodo2){
+                value = i;
+            }
+        }
+    }
+
+    return adyacencia.esVecino(key,value);
+
+}
+
+QVector<NodoCerveza* > Grafo::obtenerEstilosNoVecinos(QString familia){
+    QVector<NodoCerveza* > temp;
+
+    for(int i = 0; i<obtenerEstilos().size();i++){
+        if(sonVecinos(familia,obtenerEstilos()[i]->getNombre()) == false){
+            temp = temp << obtenerEstilos()[i];
+        }
+    }
+    return temp;
+}
+
+QVector<NodoCerveza* > Grafo::obtenerCervezasNoVecinas(QString estilo){
+    QVector<NodoCerveza* > temp;
+
+    for(int i = 0; i<obtenerCervezas().size();i++){
+        if(sonVecinos(estilo,obtenerCervezas()[i]->getNombre()) == false){
+            temp = temp << obtenerCervezas()[i];
+        }
+    }
+
+    return temp;
+}

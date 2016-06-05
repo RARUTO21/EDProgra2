@@ -26,9 +26,14 @@ public:
     QVector<NodoCerveza* > obtenerEstilosDeFamilia(QString familia);
     QVector<NodoCerveza* > obtenerCervezasDeEstilo(QString estilo);
 
+    QVector<NodoCerveza* > obtenerEstilosNoVecinos(QString familia);
+    QVector<NodoCerveza* > obtenerCervezasNoVecinas(QString estilo);
+
     //BSTree<int,NodoCerveza* > obtenerNodos();
 
     NodoCerveza* obtenerNodo(QString nombre);
+
+    bool sonVecinos(QString nodo1, QString nodo2);
 
     int getSize();
 

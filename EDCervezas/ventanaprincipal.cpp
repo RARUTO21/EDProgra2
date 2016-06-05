@@ -6,13 +6,17 @@
 #include "buscarcerveza.h"
 #include "listacervezasfamilia.h"
 #include "borrardatos.h"
-//#include "ventanasorpresa.h"
+
 #include "ventanaregistrarfamilia.h"
 #include "ventanaregistrarestilo.h"
 #include "ventanaregistrarcerveza.h"
+
 #include "ventanaconsultarcerveza.h"
 #include "ventanaconsultarestilo.h"
 #include "ventanaconsultarfamilia.h"
+
+#include "ventanaenlazarestilocerveza.h"
+#include "ventanaenlazarfamiliaestilo.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -90,5 +94,17 @@ void VentanaPrincipal::on_btnConsultarEstilo_clicked()
 void VentanaPrincipal::on_btnConsultarFamilia_clicked()
 {
     VentanaConsultarFamilia * ventana = new VentanaConsultarFamilia(&grafo);
+    ventana->exec();
+}
+
+void VentanaPrincipal::on_btnEnlazarFamiliaEstilo_clicked()
+{
+    VentanaEnlazarFamiliaEstilo * ventana = new VentanaEnlazarFamiliaEstilo(&grafo);
+    ventana->exec();
+}
+
+void VentanaPrincipal::on_btnEnlazarEstiloCerveza_clicked()
+{
+    VentanaEnlazarEstiloCerveza * ventana = new VentanaEnlazarEstiloCerveza(&grafo);
     ventana->exec();
 }

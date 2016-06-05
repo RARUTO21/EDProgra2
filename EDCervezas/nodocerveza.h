@@ -22,6 +22,7 @@ public:
     QString getCuerpo();
     QString getPrecio();
 
+
 private:
     QString nombre;
     QString descripcion;
