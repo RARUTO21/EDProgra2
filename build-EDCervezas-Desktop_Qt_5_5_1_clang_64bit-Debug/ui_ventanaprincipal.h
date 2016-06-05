@@ -29,8 +29,6 @@ public:
     QWidget *centralWidget;
     QPushButton *btnRegCerveza;
     QPushButton *btnsalir;
-    QPushButton *btnRegFamilia;
-    QPushButton *btnRegEstilo;
     QPushButton *btnBuscarCerveza;
     QPushButton *btnListaCervezas;
     QPushButton *btnBorrarDatos;
@@ -42,7 +40,7 @@ public:
     {
         if (VentanaPrincipal->objectName().isEmpty())
             VentanaPrincipal->setObjectName(QStringLiteral("VentanaPrincipal"));
-        VentanaPrincipal->resize(523, 372);
+        VentanaPrincipal->resize(509, 350);
         VentanaPrincipal->setStyleSheet(QStringLiteral("background-color: rgb(85, 170, 127);"));
         centralWidget = new QWidget(VentanaPrincipal);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -52,28 +50,22 @@ public:
         btnRegCerveza->setStyleSheet(QStringLiteral(""));
         btnsalir = new QPushButton(centralWidget);
         btnsalir->setObjectName(QStringLiteral("btnsalir"));
-        btnsalir->setGeometry(QRect(380, 280, 75, 23));
-        btnRegFamilia = new QPushButton(centralWidget);
-        btnRegFamilia->setObjectName(QStringLiteral("btnRegFamilia"));
-        btnRegFamilia->setGeometry(QRect(40, 120, 141, 41));
-        btnRegEstilo = new QPushButton(centralWidget);
-        btnRegEstilo->setObjectName(QStringLiteral("btnRegEstilo"));
-        btnRegEstilo->setGeometry(QRect(40, 170, 141, 41));
+        btnsalir->setGeometry(QRect(350, 250, 75, 23));
         btnBuscarCerveza = new QPushButton(centralWidget);
         btnBuscarCerveza->setObjectName(QStringLiteral("btnBuscarCerveza"));
-        btnBuscarCerveza->setGeometry(QRect(340, 70, 141, 41));
+        btnBuscarCerveza->setGeometry(QRect(40, 130, 141, 41));
         btnBuscarCerveza->setStyleSheet(QStringLiteral(""));
         btnListaCervezas = new QPushButton(centralWidget);
         btnListaCervezas->setObjectName(QStringLiteral("btnListaCervezas"));
-        btnListaCervezas->setGeometry(QRect(340, 120, 141, 41));
+        btnListaCervezas->setGeometry(QRect(260, 70, 141, 41));
         btnListaCervezas->setStyleSheet(QStringLiteral(""));
         btnBorrarDatos = new QPushButton(centralWidget);
         btnBorrarDatos->setObjectName(QStringLiteral("btnBorrarDatos"));
-        btnBorrarDatos->setGeometry(QRect(340, 170, 141, 41));
+        btnBorrarDatos->setGeometry(QRect(260, 130, 141, 41));
         VentanaPrincipal->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(VentanaPrincipal);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 523, 21));
+        menuBar->setGeometry(QRect(0, 0, 509, 21));
         VentanaPrincipal->setMenuBar(menuBar);
         mainToolBar = new QToolBar(VentanaPrincipal);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -92,8 +84,6 @@ public:
         VentanaPrincipal->setWindowTitle(QApplication::translate("VentanaPrincipal", "VentanaPrincipal", 0));
         btnRegCerveza->setText(QApplication::translate("VentanaPrincipal", "Registrar cerveza", 0));
         btnsalir->setText(QApplication::translate("VentanaPrincipal", "salir", 0));
-        btnRegFamilia->setText(QApplication::translate("VentanaPrincipal", "Registar familia cerveza", 0));
-        btnRegEstilo->setText(QApplication::translate("VentanaPrincipal", "Registrar estilo cerveza", 0));
         btnBuscarCerveza->setText(QApplication::translate("VentanaPrincipal", "Buscar cerveza", 0));
         btnListaCervezas->setText(QApplication::translate("VentanaPrincipal", "Lista cervezas por familia", 0));
         btnBorrarDatos->setText(QApplication::translate("VentanaPrincipal", "Borrar datos", 0));

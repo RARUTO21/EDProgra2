@@ -2,7 +2,7 @@
 
 using namespace std;
 
-NodoCerveza::NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pEstilo, std::string pCuerpo, double pPrecio)
+NodoCerveza::NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio)
 {
     nombre = pNombre;
     descripcion = pDescripcion;
@@ -10,7 +10,7 @@ NodoCerveza::NodoCerveza(std::string pNombre, std::string pDescripcion, std::str
     tiempoDeFermentacion = pTiempoDeFermentacion;
     temperatura = pTemperatura;
     color = pColor;
-    estilo = pEstilo;
+    tipoNodo = pTipoNodo;
     cuerpo = pCuerpo;
     precio = pPrecio;
 }
@@ -43,8 +43,8 @@ std::string NodoCerveza::getColor(){
     return color;
 }
 
-std::string NodoCerveza::getEstilo(){
-    return estilo;
+std::string NodoCerveza::getTipoNodo(){
+    return tipoNodo;
 }
 
 std::string NodoCerveza::getCuerpo(){

@@ -20,9 +20,9 @@ private slots:
 
     void on_btnsalir_clicked();
 
-    void on_btnRegFamilia_clicked();
+    //void on_btnRegFamilia_clicked();
 
-    void on_btnRegEstilo_clicked();
+    //void on_btnRegEstilo_clicked();
 
     void on_btnBuscarCerveza_clicked();
 

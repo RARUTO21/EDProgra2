@@ -9,6 +9,10 @@
 
 #include "listaadyacencia.h"
 
+#include "bstree.h"
+
+#include "grafo.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -17,66 +21,78 @@ int main(int argc, char *argv[])
     VentanaPrincipal w;
     w.show();
 
-
-    DLinkedList<int> miLista;
-
-    miLista.append(8);
-    miLista.append(12);
-    miLista.append(4);
-    miLista.append(16);
-    miLista.append(0);
-
-
-    miLista.goToStart();
-
-    for(int i = 0; i< miLista.getSize();i++){
-        miLista.goToPos(i);
-        qDebug()<<"Posicion: "<<i<<" - Valor: "<<miLista.getElement()<<endl;
-    }
-
-    miLista.goToPos(3);
-    miLista.remove();
-
-    qDebug()<<"--- Elimanda: Posicion 3 ---"<<endl;
-
-    for(int i = 0; i< miLista.getSize();i++){
-        miLista.goToPos(i);
-        qDebug()<<"Posicion: "<<i<<" - Valor: "<<miLista.getElement()<<endl;
-    }
-
-    ArrayList< DLinkedList<int>* > listaListas;
-
-    listaListas.insert(&miLista);
-
-    listaListas.goToStart();
-
-    for(int i = 0; i < listaListas.getElement()->getSize();i++){
-        listaListas.getElement()->goToPos(i);
-        qDebug()<<"Sub-elemento: "<<i<<" Valor: "<<listaListas.getElement()->getElement()<<endl;
-
-    }
-
-    //qDebug()<<"Elemento: "<<listaListas.getElement()->getElement()<<endl;
-
-
     ListaAdyacencia adyacencia;
 
-    adyacencia.agregarNodo(9);
-    adyacencia.agregarNodo(4);
-    adyacencia.agregarNodo(56);
+    adyacencia.enlazarNodo(56,23);
+    adyacencia.enlazarNodo(56,80);
+    adyacencia.enlazarNodo(9,10);
+    adyacencia.enlazarNodo(4,50);
+    adyacencia.enlazarNodo(9,0);
+    adyacencia.enlazarNodo(56,37);
 
-    //adyacencia.obtenerValorInicial(3);
+    adyacencia.eliminarVecino(56,23);
 
-    //adyacencia.enlazarNodo(56,23);
-    //adyacencia.enlazarNodo(56,80);
+    adyacencia.eliminarNodo(9);
+
+    qDebug()<<"Los vecinos de 56: "<<adyacencia.obtenerVecinos(56);
+
+    //qDebug()<<"Vecinos del 2: "<<adyacencia.obtenerVecinos(2);
+    //qDebug()<<"Cantidad de vecinos del 2: "<<adyacencia.obtenerVecinos(2).size();
+
+    BSTree<int,NodoCerveza* > arbol;
+    //arbol.insert(0,"Hola");
+    //arbol.insert(1,"Mundo!");
+
+
+    NodoCerveza* pilsen = new NodoCerveza("Pilsen","Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Chichero","Panzon",1200.0);
+
+    arbol.insert(0,pilsen);
+    //qDebug()<<"Valor del arbol 0: "<<arbol.find(0)->getNombre()<<endl;
+
+    //qDebug()<<"Valor del arbol 1: "<<arbol.find(1)<<endl;
+
+    //qDebug()<<"Valor del arbol 2: "<<arbol.find(2)<<endl;
+
     /*
-    qDebug()<<"Lista de adyacencia: \n\n Valor: "<<56<<endl<<"Vecinos: "<<endl;
-    for(int i = 1; i< adyacencia.obtenerVecinos(56)->getSize(); i++){
-        adyacencia.obtenerVecinos(56)->goToPos(i);
-        qDebug()<<adyacencia.obtenerVecinos(56)->getElement()<<endl;
+    Grafo grafo;
+
+    QString pilsner = "Pilsner";
+    QString american_pilsner = "American Pilsner";
+    QString german_pilsner = "German Pilsner";
+
+    grafo.insertarNodo(pilsner,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Estilo","Panzon",1200.0);
+    grafo.insertarNodo(american_pilsner,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Estilo","Panzon",1500.0);
+    grafo.insertarNodo(german_pilsner,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Estilo","Panzon",1900.0);
+
+    QString ale = "Ale";
+    grafo.insertarNodo(ale,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Familia","Panzon",2500.0);
+
+    QString lager = "Lager";
+    grafo.insertarNodo(lager,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Familia","Panzon",3000.0);
+
+    QString ginger_ale = "Ginger Ale";
+    grafo.insertarNodo(ginger_ale,"Sabe feo","Recorcholis","Mucho tiempo","20˙","Amarilla","Cerveza","Panzon",1000.0);
+
+    grafo.establecerVecinos(pilsner,american_pilsner);
+    grafo.establecerVecinos(pilsner,german_pilsner);
+    grafo.establecerVecinos(pilsner,ginger_ale);
+
+    for(int i = 0; i < grafo.obtenerVecinos(pilsner).size(); i++){
+        qDebug()<<"Vecino de Pilsner"<<grafo.obtenerVecinos(pilsner)[i]->getNombre()<<" Valor: "<<grafo.obtenerVecinos(pilsner)[i]->getPrecio();
+    }
+
+    for(int i = 0; i < grafo.obtenerFamilias().size(); i++){
+        qDebug()<<"Familia del Grafo: "<<grafo.obtenerFamilias()[i]->getNombre();
+    }
+
+    for(int i = 0; i < grafo.obtenerEstilos().size(); i++){
+        qDebug()<<"Estilo del Grafo: "<<grafo.obtenerEstilos()[i]->getNombre();
+    }
+
+    for(int i = 0; i < grafo.obtenerCervezas().size(); i++){
+        qDebug()<<"Cerveza del Grafo: "<<grafo.obtenerCervezas()[i]->getNombre();
     }
     */
-
 
     return a.exec();
 }

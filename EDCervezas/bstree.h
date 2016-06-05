@@ -1,6 +1,11 @@
 #ifndef BSTREE_H
 #define BSTREE_H
 
+#include "bstnode.h"
+#include "stdexcept"
+
+using namespace std;
+
 template <typename Key, typename E>
 
 class BSTree{
@@ -24,7 +29,7 @@ private:
     BSTNode<Key, E>* root;
 
     E findAux(BSTNode<Key, E>* pRoot, Key pKey) throw (runtime_error) {
-        if (pRoot == NULL) {
+        if (pRoot == 0) {
             throw runtime_error("Key not found.");
         }
         if (pKey == pRoot->getKey()) {

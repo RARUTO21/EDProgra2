@@ -7,6 +7,8 @@ RegistrarCerveza::RegistrarCerveza(QWidget *parent) :
     ui(new Ui::RegistrarCerveza)
 {
     ui->setupUi(this);
+
+    /*
     ui->comboBoxFamilia->addItem("ALE");
     ui->comboBoxFamilia->addItem("Lager");
     ui->comboBoxFamilia->addItem("Lambic");
@@ -19,6 +21,7 @@ RegistrarCerveza::RegistrarCerveza(QWidget *parent) :
     ui->comboBoxEstilo->addItem("Brown");
     ui->comboBoxEstilo->addItem("Porter/Stout");
     ui->comboBoxEstilo->addItem("Otros");
+    */
 
 }
 

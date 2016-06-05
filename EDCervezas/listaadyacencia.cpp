@@ -1,51 +1,47 @@
 #include "listaadyacencia.h"
 #include <QDebug>
 
-ListaAdyacencia::ListaAdyacencia()
-{
-
-}
+ListaAdyacencia::ListaAdyacencia(){ }
 
 // SI ALGO DEJA DE FUNCIONAR ENTONCES EL PLAN B ES ESTE: BORRAR ESTE DESTRUCTOR!
-ListaAdyacencia::~ListaAdyacencia(){
-    for(int i = 0; i < listaPrincipal.getSize(); i++){
-        listaPrincipal.goToStart();
-        delete [] listaPrincipal.getElement();
+ListaAdyacencia::~ListaAdyacencia(){ }
+
+void ListaAdyacencia::enlazarNodo(int key, int value){
+    /*
+    for(int i = 0; i < adyacencia.size(); i++){
+        for(int j = 0; j<adyacencia[i].size(); j++){
+            //qDebug()<<"Vector= Pos[i]: "<<i<<" Pos[j]:: "<<j<<" Valor: "<<adyacencia[i][j]<<endl;
+        }
     }
-    delete [] &listaPrincipal;
+
+    for(int i=0; i< adyacencia.size(); i++){
+        if(adyacencia[i][0] == value1){
+            QVector<int> temp = adyacencia[i];
+            temp<<value2;
+            adyacencia[i] = temp;
+        }
+
+    }*/
+    mapa[key] =  mapa[key] << value;
+
+    qDebug()<<"El valor: "<<key<<" esta enlazado con: "<<mapa.value(key);
 }
 
-void ListaAdyacencia::agregarNodo(int keyValue){
-    DLinkedList<int> nuevaSubLista;
-    nuevaSubLista.append(keyValue);
-    listaPrincipal.append(&nuevaSubLista);
+QVector<int> ListaAdyacencia::obtenerVecinos(int key){
+    return mapa[key];
 }
 
-void ListaAdyacencia::enlazarNodo(int value1, int value2){
-    for(int i = 0; i < listaPrincipal.getSize(); i++){
-
-        listaPrincipal.goToPos(i);
-        listaPrincipal.getElement()->goToStart();
-        if(listaPrincipal.getElement()->getElement() == value1){
-            listaPrincipal.getElement()->append(value2);
-            qDebug()<<"Llego hasta aqui"<<endl;
+void ListaAdyacencia::eliminarVecino(int key, int value){
+    for(int i = 0; i<mapa[key].size();i++){
+        if(mapa[key][i] == value){
+            mapa[key].remove(i);
+            qDebug()<<"Valor: "<<key<<" Vecino: "<<value<<" Eliminado!";
+            qDebug()<<"El valor: "<<key<<" esta enlazado con: "<<mapa.value(key);
         }
     }
 }
 
-DLinkedList<int> * ListaAdyacencia:: obtenerVecinos(int value){
-    for(int i = 0; i < listaPrincipal.getSize(); i++){
-        listaPrincipal.goToPos(i);
-        listaPrincipal.getElement()->goToPos(0);
-        if(listaPrincipal.getElement()->getElement() == value){
-            return listaPrincipal.getElement();
-        }
-    }
+void ListaAdyacencia::eliminarNodo(int key){
+    mapa.remove(key);
+    //qDebug()<<"Nodo: "<<key<<" Eliminado! Ahora no tiene vecinos: "<<mapa[key];
 }
-
-void ListaAdyacencia::obtenerValorInicial(int valor){
-    listaPrincipal.goToPos(valor);
-    listaPrincipal.getElement()->goToStart();
-    qDebug()<<"Posicio: "<<valor<<" - Valor inicial: "<<listaPrincipal.getElement()->getElement()<<endl;
-}
-

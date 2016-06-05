@@ -5,6 +5,12 @@
 #include "dlinkedlist.h"
 #include "nodocerveza.h"
 
+#include <QVector>
+#include <QList>
+#include <QMap>
+
+//const int N = 4;
+
 
 class ListaAdyacencia
 {
@@ -12,15 +18,13 @@ public:
     ListaAdyacencia();
     ~ListaAdyacencia();
 
-    void agregarNodo(int keyValue);
-    void enlazarNodo(int value1, int value2);
-    void obtenerValorInicial(int valor);
-
-    DLinkedList<int> * obtenerVecinos(int keyValue);
-
+    void enlazarNodo(int key, int value); //Q SEA BIDIRECCIONAL
+    QVector<int> obtenerVecinos(int key);
+    void eliminarVecino(int key, int value);
+    void eliminarNodo(int key);
 
 private:
-    ArrayList< DLinkedList<int>* > listaPrincipal;
+    QMap<int,QVector<int> > mapa;
 
 };
 

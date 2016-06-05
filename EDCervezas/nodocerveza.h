@@ -2,22 +2,23 @@
 #define NODOCERVEZA_H
 
 #include <string>
-
+#include <QString>
 using namespace std;
 class NodoCerveza
 {
 public:
-    NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pEstilo, std::string pCuerpo, double pPrecio);
+    NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio);
     ~NodoCerveza();
 
     //Get de los atributos
+    //QString getNombre();
     std::string getNombre();
     std::string getDescripcion();
     std::string getTipoDeFermentacion();
     std::string getTiempoDeFermentacion();
     std::string getTemperatura();
     std::string getColor();
-    std::string getEstilo();
+    std::string getTipoNodo();
     std::string getCuerpo();
     double getPrecio();
 
@@ -28,7 +29,7 @@ private:
     std::string tiempoDeFermentacion;
     std::string temperatura;
     std::string color;
-    std::string estilo;
+    std::string tipoNodo;
     std::string cuerpo;
     double precio;
 
