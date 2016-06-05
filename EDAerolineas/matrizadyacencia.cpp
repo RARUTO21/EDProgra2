@@ -4,3 +4,6 @@ MatrizAdyacencia::MatrizAdyacencia()
 {
 
 }
+MatrizAdyacencia::~MatrizAdyacencia(){
+
+}

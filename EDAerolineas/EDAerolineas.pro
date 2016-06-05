@@ -14,9 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         ventanaprincipal.cpp \
-    matrizadyacencia.cpp
+    matrizadyacencia.cpp \
+    nodociudad.cpp \
+    grafo.cpp
 
 HEADERS  += ventanaprincipal.h \
-    matrizadyacencia.h
+    matrizadyacencia.h \
+    bstnode.h \
+    nodociudad.h \
+    bstree.h \
+    grafo.h
 
 FORMS    += ventanaprincipal.ui
