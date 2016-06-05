@@ -13,19 +13,22 @@ class Grafo
 {
 public:
     Grafo();
-    void insertarNodo(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio);
-    void establecerVecinos(std::string nodo, std::string enlazar);
-    void eliminarVecino(std::string nodo, std::string eliminar);
-    QVector<NodoCerveza* > obtenerVecinos(std::string nombre);
-    void eliminarNodo(string nombre);
+    void insertarNodo(QString pNombre, QString pDescripcion, QString pTipoDeFermentacion, QString pTiempoDeFermentacion, QString pTemperatura, QString pColor, QString pTipoNodo, QString pCuerpo, QString pPrecio);
+    void establecerVecinos(QString nodo, QString enlazar);
+    void eliminarVecino(QString nodo, QString eliminar);
+    QVector<NodoCerveza* > obtenerVecinos(QString nombre);
+    void eliminarNodo(QString nombre);
 
     QVector<NodoCerveza* > obtenerFamilias();
     QVector<NodoCerveza* > obtenerEstilos();
     QVector<NodoCerveza* > obtenerCervezas();
 
+    QVector<NodoCerveza* > obtenerEstilosDeFamilia(QString familia);
+    QVector<NodoCerveza* > obtenerCervezasDeEstilo(QString estilo);
+
     //BSTree<int,NodoCerveza* > obtenerNodos();
 
-    NodoCerveza* obtenerNodo(std::string nombre);
+    NodoCerveza* obtenerNodo(QString nombre);
 
     int getSize();
 

@@ -53,36 +53,52 @@ SOURCES       = ../EDCervezas/main.cpp \
 		../EDCervezas/listaadyacencia.cpp \
 		../EDCervezas/nodocerveza.cpp \
 		../EDCervezas/registrarcerveza.cpp \
-		../EDCervezas/registrarfamiliacerveza.cpp \
-		../EDCervezas/registrarestilocerveza.cpp \
 		../EDCervezas/buscarcerveza.cpp \
 		../EDCervezas/listacervezasfamilia.cpp \
 		../EDCervezas/borrardatos.cpp \
-		../EDCervezas/grafo.cpp moc_ventanaprincipal.cpp \
+		../EDCervezas/grafo.cpp \
+		../EDCervezas/ventanaregistrarfamilia.cpp \
+		../EDCervezas/ventanaregistrarestilo.cpp \
+		../EDCervezas/ventanaregistrarcerveza.cpp \
+		../EDCervezas/ventanaconsultarcerveza.cpp \
+		../EDCervezas/ventanaconsultarfamilia.cpp \
+		../EDCervezas/ventanaconsultarestilo.cpp moc_ventanaprincipal.cpp \
 		moc_registrarcerveza.cpp \
-		moc_registrarfamiliacerveza.cpp \
-		moc_registrarestilocerveza.cpp \
 		moc_buscarcerveza.cpp \
 		moc_listacervezasfamilia.cpp \
-		moc_borrardatos.cpp
+		moc_borrardatos.cpp \
+		moc_ventanaregistrarfamilia.cpp \
+		moc_ventanaregistrarestilo.cpp \
+		moc_ventanaregistrarcerveza.cpp \
+		moc_ventanaconsultarcerveza.cpp \
+		moc_ventanaconsultarfamilia.cpp \
+		moc_ventanaconsultarestilo.cpp
 OBJECTS       = main.o \
 		ventanaprincipal.o \
 		listaadyacencia.o \
 		nodocerveza.o \
 		registrarcerveza.o \
-		registrarfamiliacerveza.o \
-		registrarestilocerveza.o \
 		buscarcerveza.o \
 		listacervezasfamilia.o \
 		borrardatos.o \
 		grafo.o \
+		ventanaregistrarfamilia.o \
+		ventanaregistrarestilo.o \
+		ventanaregistrarcerveza.o \
+		ventanaconsultarcerveza.o \
+		ventanaconsultarfamilia.o \
+		ventanaconsultarestilo.o \
 		moc_ventanaprincipal.o \
 		moc_registrarcerveza.o \
-		moc_registrarfamiliacerveza.o \
-		moc_registrarestilocerveza.o \
 		moc_buscarcerveza.o \
 		moc_listacervezasfamilia.o \
-		moc_borrardatos.o
+		moc_borrardatos.o \
+		moc_ventanaregistrarfamilia.o \
+		moc_ventanaregistrarestilo.o \
+		moc_ventanaregistrarcerveza.o \
+		moc_ventanaconsultarcerveza.o \
+		moc_ventanaconsultarfamilia.o \
+		moc_ventanaconsultarestilo.o
 DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -233,24 +249,32 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../EDCervezas/listaadyacencia.h \
 		../EDCervezas/nodocerveza.h \
 		../EDCervezas/registrarcerveza.h \
-		../EDCervezas/registrarfamiliacerveza.h \
-		../EDCervezas/registrarestilocerveza.h \
 		../EDCervezas/buscarcerveza.h \
 		../EDCervezas/listacervezasfamilia.h \
 		../EDCervezas/borrardatos.h \
 		../EDCervezas/bstnode.h \
 		../EDCervezas/bstree.h \
-		../EDCervezas/grafo.h ../EDCervezas/main.cpp \
+		../EDCervezas/grafo.h \
+		../EDCervezas/ventanaregistrarfamilia.h \
+		../EDCervezas/ventanaregistrarestilo.h \
+		../EDCervezas/ventanaregistrarcerveza.h \
+		../EDCervezas/ventanaconsultarcerveza.h \
+		../EDCervezas/ventanaconsultarfamilia.h \
+		../EDCervezas/ventanaconsultarestilo.h ../EDCervezas/main.cpp \
 		../EDCervezas/ventanaprincipal.cpp \
 		../EDCervezas/listaadyacencia.cpp \
 		../EDCervezas/nodocerveza.cpp \
 		../EDCervezas/registrarcerveza.cpp \
-		../EDCervezas/registrarfamiliacerveza.cpp \
-		../EDCervezas/registrarestilocerveza.cpp \
 		../EDCervezas/buscarcerveza.cpp \
 		../EDCervezas/listacervezasfamilia.cpp \
 		../EDCervezas/borrardatos.cpp \
-		../EDCervezas/grafo.cpp
+		../EDCervezas/grafo.cpp \
+		../EDCervezas/ventanaregistrarfamilia.cpp \
+		../EDCervezas/ventanaregistrarestilo.cpp \
+		../EDCervezas/ventanaregistrarcerveza.cpp \
+		../EDCervezas/ventanaconsultarcerveza.cpp \
+		../EDCervezas/ventanaconsultarfamilia.cpp \
+		../EDCervezas/ventanaconsultarestilo.cpp
 QMAKE_TARGET  = EDCervezas
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = EDCervezas.app/Contents/MacOS/EDCervezas
@@ -288,7 +312,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h $(OBJECTS)  
+$(TARGET): ui_ventanaprincipal.h ui_registrarcerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h ui_ventanaregistrarfamilia.h ui_ventanaregistrarestilo.h ui_ventanaregistrarcerveza.h ui_ventanaconsultarcerveza.h ui_ventanaconsultarfamilia.h ui_ventanaconsultarestilo.h $(OBJECTS)  
 	@test -d EDCervezas.app/Contents/MacOS/ || mkdir -p EDCervezas.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -616,9 +640,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h ../EDCervezas/listaadyacencia.h ../EDCervezas/nodocerveza.h ../EDCervezas/registrarcerveza.h ../EDCervezas/registrarfamiliacerveza.h ../EDCervezas/registrarestilocerveza.h ../EDCervezas/buscarcerveza.h ../EDCervezas/listacervezasfamilia.h ../EDCervezas/borrardatos.h ../EDCervezas/bstnode.h ../EDCervezas/bstree.h ../EDCervezas/grafo.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/listaadyacencia.cpp ../EDCervezas/nodocerveza.cpp ../EDCervezas/registrarcerveza.cpp ../EDCervezas/registrarfamiliacerveza.cpp ../EDCervezas/registrarestilocerveza.cpp ../EDCervezas/buscarcerveza.cpp ../EDCervezas/listacervezasfamilia.cpp ../EDCervezas/borrardatos.cpp ../EDCervezas/grafo.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui ../EDCervezas/registrarcerveza.ui ../EDCervezas/registrarfamiliacerveza.ui ../EDCervezas/registrarestilocerveza.ui ../EDCervezas/buscarcerveza.ui ../EDCervezas/listacervezasfamilia.ui ../EDCervezas/borrardatos.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.h ../EDCervezas/dnode.h ../EDCervezas/dlinkedlist.h ../EDCervezas/arraylist.h ../EDCervezas/listaadyacencia.h ../EDCervezas/nodocerveza.h ../EDCervezas/registrarcerveza.h ../EDCervezas/buscarcerveza.h ../EDCervezas/listacervezasfamilia.h ../EDCervezas/borrardatos.h ../EDCervezas/bstnode.h ../EDCervezas/bstree.h ../EDCervezas/grafo.h ../EDCervezas/ventanaregistrarfamilia.h ../EDCervezas/ventanaregistrarestilo.h ../EDCervezas/ventanaregistrarcerveza.h ../EDCervezas/ventanaconsultarcerveza.h ../EDCervezas/ventanaconsultarfamilia.h ../EDCervezas/ventanaconsultarestilo.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/listaadyacencia.cpp ../EDCervezas/nodocerveza.cpp ../EDCervezas/registrarcerveza.cpp ../EDCervezas/buscarcerveza.cpp ../EDCervezas/listacervezasfamilia.cpp ../EDCervezas/borrardatos.cpp ../EDCervezas/grafo.cpp ../EDCervezas/ventanaregistrarfamilia.cpp ../EDCervezas/ventanaregistrarestilo.cpp ../EDCervezas/ventanaregistrarcerveza.cpp ../EDCervezas/ventanaconsultarcerveza.cpp ../EDCervezas/ventanaconsultarfamilia.cpp ../EDCervezas/ventanaconsultarestilo.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EDCervezas/ventanaprincipal.ui ../EDCervezas/registrarcerveza.ui ../EDCervezas/buscarcerveza.ui ../EDCervezas/listacervezasfamilia.ui ../EDCervezas/borrardatos.ui ../EDCervezas/ventanaregistrarfamilia.ui ../EDCervezas/ventanaregistrarestilo.ui ../EDCervezas/ventanaregistrarcerveza.ui ../EDCervezas/ventanaconsultarcerveza.ui ../EDCervezas/ventanaconsultarfamilia.ui ../EDCervezas/ventanaconsultarestilo.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -644,11 +668,27 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_registrarfamiliacerveza.cpp moc_registrarestilocerveza.cpp moc_buscarcerveza.cpp moc_listacervezasfamilia.cpp moc_borrardatos.cpp
+compiler_moc_header_make_all: moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_buscarcerveza.cpp moc_listacervezasfamilia.cpp moc_borrardatos.cpp moc_ventanaregistrarfamilia.cpp moc_ventanaregistrarestilo.cpp moc_ventanaregistrarcerveza.cpp moc_ventanaconsultarcerveza.cpp moc_ventanaconsultarfamilia.cpp moc_ventanaconsultarestilo.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_registrarfamiliacerveza.cpp moc_registrarestilocerveza.cpp moc_buscarcerveza.cpp moc_listacervezasfamilia.cpp moc_borrardatos.cpp
+	-$(DEL_FILE) moc_ventanaprincipal.cpp moc_registrarcerveza.cpp moc_buscarcerveza.cpp moc_listacervezasfamilia.cpp moc_borrardatos.cpp moc_ventanaregistrarfamilia.cpp moc_ventanaregistrarestilo.cpp moc_ventanaregistrarcerveza.cpp moc_ventanaconsultarcerveza.cpp moc_ventanaconsultarfamilia.cpp moc_ventanaconsultarestilo.cpp
 moc_ventanaprincipal.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		../EDCervezas/ventanaprincipal.h
 	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaprincipal.h -o moc_ventanaprincipal.cpp
 
@@ -656,16 +696,6 @@ moc_registrarcerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Heade
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../EDCervezas/registrarcerveza.h
 	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarcerveza.h -o moc_registrarcerveza.cpp
-
-moc_registrarfamiliacerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../EDCervezas/registrarfamiliacerveza.h
-	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarfamiliacerveza.h -o moc_registrarfamiliacerveza.cpp
-
-moc_registrarestilocerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../EDCervezas/registrarestilocerveza.h
-	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/registrarestilocerveza.h -o moc_registrarestilocerveza.cpp
 
 moc_buscarcerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -682,22 +712,142 @@ moc_borrardatos.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QW
 		../EDCervezas/borrardatos.h
 	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/borrardatos.h -o moc_borrardatos.cpp
 
+moc_ventanaregistrarfamilia.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaregistrarfamilia.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaregistrarfamilia.h -o moc_ventanaregistrarfamilia.cpp
+
+moc_ventanaregistrarestilo.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaregistrarestilo.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaregistrarestilo.h -o moc_ventanaregistrarestilo.cpp
+
+moc_ventanaregistrarcerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaregistrarcerveza.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaregistrarcerveza.h -o moc_ventanaregistrarcerveza.cpp
+
+moc_ventanaconsultarcerveza.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaconsultarcerveza.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaconsultarcerveza.h -o moc_ventanaconsultarcerveza.cpp
+
+moc_ventanaconsultarfamilia.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaconsultarfamilia.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaconsultarfamilia.h -o moc_ventanaconsultarfamilia.cpp
+
+moc_ventanaconsultarestilo.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		../EDCervezas/ventanaconsultarestilo.h
+	/Users/macretinai7/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/macretinai7/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/macretinai7/Desktop/EDProgra2/EDCervezas -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/macretinai7/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/macretinai7/Qt/5.5/clang_64/lib ../EDCervezas/ventanaconsultarestilo.h -o moc_ventanaconsultarestilo.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h
+compiler_uic_make_all: ui_ventanaprincipal.h ui_registrarcerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h ui_ventanaregistrarfamilia.h ui_ventanaregistrarestilo.h ui_ventanaregistrarcerveza.h ui_ventanaconsultarcerveza.h ui_ventanaconsultarfamilia.h ui_ventanaconsultarestilo.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_ventanaprincipal.h ui_registrarcerveza.h ui_registrarfamiliacerveza.h ui_registrarestilocerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h
+	-$(DEL_FILE) ui_ventanaprincipal.h ui_registrarcerveza.h ui_buscarcerveza.h ui_listacervezasfamilia.h ui_borrardatos.h ui_ventanaregistrarfamilia.h ui_ventanaregistrarestilo.h ui_ventanaregistrarcerveza.h ui_ventanaconsultarcerveza.h ui_ventanaconsultarfamilia.h ui_ventanaconsultarestilo.h
 ui_ventanaprincipal.h: ../EDCervezas/ventanaprincipal.ui
 	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaprincipal.ui -o ui_ventanaprincipal.h
 
 ui_registrarcerveza.h: ../EDCervezas/registrarcerveza.ui
 	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarcerveza.ui -o ui_registrarcerveza.h
-
-ui_registrarfamiliacerveza.h: ../EDCervezas/registrarfamiliacerveza.ui
-	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarfamiliacerveza.ui -o ui_registrarfamiliacerveza.h
-
-ui_registrarestilocerveza.h: ../EDCervezas/registrarestilocerveza.ui
-	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/registrarestilocerveza.ui -o ui_registrarestilocerveza.h
 
 ui_buscarcerveza.h: ../EDCervezas/buscarcerveza.ui
 	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/buscarcerveza.ui -o ui_buscarcerveza.h
@@ -707,6 +857,24 @@ ui_listacervezasfamilia.h: ../EDCervezas/listacervezasfamilia.ui
 
 ui_borrardatos.h: ../EDCervezas/borrardatos.ui
 	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/borrardatos.ui -o ui_borrardatos.h
+
+ui_ventanaregistrarfamilia.h: ../EDCervezas/ventanaregistrarfamilia.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaregistrarfamilia.ui -o ui_ventanaregistrarfamilia.h
+
+ui_ventanaregistrarestilo.h: ../EDCervezas/ventanaregistrarestilo.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaregistrarestilo.ui -o ui_ventanaregistrarestilo.h
+
+ui_ventanaregistrarcerveza.h: ../EDCervezas/ventanaregistrarcerveza.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaregistrarcerveza.ui -o ui_ventanaregistrarcerveza.h
+
+ui_ventanaconsultarcerveza.h: ../EDCervezas/ventanaconsultarcerveza.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaconsultarcerveza.ui -o ui_ventanaconsultarcerveza.h
+
+ui_ventanaconsultarfamilia.h: ../EDCervezas/ventanaconsultarfamilia.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaconsultarfamilia.ui -o ui_ventanaconsultarfamilia.h
+
+ui_ventanaconsultarestilo.h: ../EDCervezas/ventanaconsultarestilo.ui
+	/Users/macretinai7/Qt/5.5/clang_64/bin/uic ../EDCervezas/ventanaconsultarestilo.ui -o ui_ventanaconsultarestilo.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -723,30 +891,45 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../EDCervezas/main.cpp ../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
 		../EDCervezas/dlinkedlist.h \
 		../EDCervezas/dnode.h \
-		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../EDCervezas/arraylist.h \
 		../EDCervezas/nodocerveza.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		../EDCervezas/listaadyacencia.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
-		../EDCervezas/bstree.h \
-		../EDCervezas/bstnode.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EDCervezas/main.cpp
 
 ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		ui_ventanaprincipal.h \
 		../EDCervezas/registrarcerveza.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
@@ -755,7 +938,19 @@ ventanaprincipal.o: ../EDCervezas/ventanaprincipal.cpp ../EDCervezas/ventanaprin
 		../EDCervezas/registrarestilocerveza.h \
 		../EDCervezas/buscarcerveza.h \
 		../EDCervezas/listacervezasfamilia.h \
-		../EDCervezas/borrardatos.h
+		../EDCervezas/borrardatos.h \
+		../EDCervezas/ventanaregistrarfamilia.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/ventanaregistrarestilo.h \
+		../EDCervezas/ventanaregistrarcerveza.h \
+		../EDCervezas/ventanaconsultarcerveza.h \
+		../EDCervezas/ventanaconsultarestilo.h \
+		../EDCervezas/ventanaconsultarfamilia.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaprincipal.o ../EDCervezas/ventanaprincipal.cpp
 
 listaadyacencia.o: ../EDCervezas/listaadyacencia.cpp ../EDCervezas/listaadyacencia.h \
@@ -786,26 +981,24 @@ registrarcerveza.o: ../EDCervezas/registrarcerveza.cpp ../EDCervezas/registrarce
 		ui_registrarcerveza.h \
 		../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarcerveza.o ../EDCervezas/registrarcerveza.cpp
-
-registrarfamiliacerveza.o: ../EDCervezas/registrarfamiliacerveza.cpp ../EDCervezas/registrarfamiliacerveza.h \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_registrarfamiliacerveza.h \
-		../EDCervezas/ventanaprincipal.h \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarfamiliacerveza.o ../EDCervezas/registrarfamiliacerveza.cpp
-
-registrarestilocerveza.o: ../EDCervezas/registrarestilocerveza.cpp ../EDCervezas/registrarestilocerveza.h \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_registrarestilocerveza.h \
-		../EDCervezas/ventanaprincipal.h \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrarestilocerveza.o ../EDCervezas/registrarestilocerveza.cpp
 
 buscarcerveza.o: ../EDCervezas/buscarcerveza.cpp ../EDCervezas/buscarcerveza.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
@@ -813,7 +1006,23 @@ buscarcerveza.o: ../EDCervezas/buscarcerveza.cpp ../EDCervezas/buscarcerveza.h \
 		ui_buscarcerveza.h \
 		../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o buscarcerveza.o ../EDCervezas/buscarcerveza.cpp
 
 listacervezasfamilia.o: ../EDCervezas/listacervezasfamilia.cpp ../EDCervezas/listacervezasfamilia.h \
@@ -822,7 +1031,23 @@ listacervezasfamilia.o: ../EDCervezas/listacervezasfamilia.cpp ../EDCervezas/lis
 		ui_listacervezasfamilia.h \
 		../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listacervezasfamilia.o ../EDCervezas/listacervezasfamilia.cpp
 
 borrardatos.o: ../EDCervezas/borrardatos.cpp ../EDCervezas/borrardatos.h \
@@ -831,7 +1056,23 @@ borrardatos.o: ../EDCervezas/borrardatos.cpp ../EDCervezas/borrardatos.h \
 		ui_borrardatos.h \
 		../EDCervezas/ventanaprincipal.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o borrardatos.o ../EDCervezas/borrardatos.cpp
 
 grafo.o: ../EDCervezas/grafo.cpp ../EDCervezas/grafo.h \
@@ -852,17 +1093,151 @@ grafo.o: ../EDCervezas/grafo.cpp ../EDCervezas/grafo.h \
 		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafo.o ../EDCervezas/grafo.cpp
 
+ventanaregistrarfamilia.o: ../EDCervezas/ventanaregistrarfamilia.cpp ../EDCervezas/ventanaregistrarfamilia.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaregistrarfamilia.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaregistrarfamilia.o ../EDCervezas/ventanaregistrarfamilia.cpp
+
+ventanaregistrarestilo.o: ../EDCervezas/ventanaregistrarestilo.cpp ../EDCervezas/ventanaregistrarestilo.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaregistrarestilo.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaregistrarestilo.o ../EDCervezas/ventanaregistrarestilo.cpp
+
+ventanaregistrarcerveza.o: ../EDCervezas/ventanaregistrarcerveza.cpp ../EDCervezas/ventanaregistrarcerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaregistrarcerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaregistrarcerveza.o ../EDCervezas/ventanaregistrarcerveza.cpp
+
+ventanaconsultarcerveza.o: ../EDCervezas/ventanaconsultarcerveza.cpp ../EDCervezas/ventanaconsultarcerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaconsultarcerveza.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaconsultarcerveza.o ../EDCervezas/ventanaconsultarcerveza.cpp
+
+ventanaconsultarfamilia.o: ../EDCervezas/ventanaconsultarfamilia.cpp ../EDCervezas/ventanaconsultarfamilia.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaconsultarfamilia.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaconsultarfamilia.o ../EDCervezas/ventanaconsultarfamilia.cpp
+
+ventanaconsultarestilo.o: ../EDCervezas/ventanaconsultarestilo.cpp ../EDCervezas/ventanaconsultarestilo.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../EDCervezas/grafo.h \
+		../EDCervezas/bstree.h \
+		../EDCervezas/bstnode.h \
+		../EDCervezas/listaadyacencia.h \
+		../EDCervezas/arraylist.h \
+		../EDCervezas/dlinkedlist.h \
+		../EDCervezas/dnode.h \
+		../EDCervezas/nodocerveza.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QList \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qlist.h \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
+		ui_ventanaconsultarestilo.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaconsultarestilo.o ../EDCervezas/ventanaconsultarestilo.cpp
+
 moc_ventanaprincipal.o: moc_ventanaprincipal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaprincipal.o moc_ventanaprincipal.cpp
 
 moc_registrarcerveza.o: moc_registrarcerveza.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarcerveza.o moc_registrarcerveza.cpp
-
-moc_registrarfamiliacerveza.o: moc_registrarfamiliacerveza.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarfamiliacerveza.o moc_registrarfamiliacerveza.cpp
-
-moc_registrarestilocerveza.o: moc_registrarestilocerveza.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrarestilocerveza.o moc_registrarestilocerveza.cpp
 
 moc_buscarcerveza.o: moc_buscarcerveza.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_buscarcerveza.o moc_buscarcerveza.cpp
@@ -872,6 +1247,24 @@ moc_listacervezasfamilia.o: moc_listacervezasfamilia.cpp
 
 moc_borrardatos.o: moc_borrardatos.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_borrardatos.o moc_borrardatos.cpp
+
+moc_ventanaregistrarfamilia.o: moc_ventanaregistrarfamilia.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaregistrarfamilia.o moc_ventanaregistrarfamilia.cpp
+
+moc_ventanaregistrarestilo.o: moc_ventanaregistrarestilo.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaregistrarestilo.o moc_ventanaregistrarestilo.cpp
+
+moc_ventanaregistrarcerveza.o: moc_ventanaregistrarcerveza.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaregistrarcerveza.o moc_ventanaregistrarcerveza.cpp
+
+moc_ventanaconsultarcerveza.o: moc_ventanaconsultarcerveza.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaconsultarcerveza.o moc_ventanaconsultarcerveza.cpp
+
+moc_ventanaconsultarfamilia.o: moc_ventanaconsultarfamilia.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaconsultarfamilia.o moc_ventanaconsultarfamilia.cpp
+
+moc_ventanaconsultarestilo.o: moc_ventanaconsultarestilo.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ventanaconsultarestilo.o moc_ventanaconsultarestilo.cpp
 
 ####### Install
 

@@ -12,13 +12,13 @@ int Grafo::getSize(){
     return counter;
 }
 
-void Grafo::insertarNodo(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio){
+void Grafo::insertarNodo(QString pNombre, QString pDescripcion, QString pTipoDeFermentacion, QString pTiempoDeFermentacion, QString pTemperatura, QString pColor, QString pTipoNodo, QString pCuerpo, QString pPrecio){
     NodoCerveza* temp = new NodoCerveza(pNombre, pDescripcion, pTipoDeFermentacion, pTiempoDeFermentacion, pTemperatura, pColor, pTipoNodo, pCuerpo, pPrecio);
     arbol.insert(counter,temp);
     counter++;
 }
 
-void Grafo::establecerVecinos(std::string nodo, std::string enlazar){
+void Grafo::establecerVecinos(QString nodo, QString enlazar){
     int key;
     int value;
 
@@ -36,7 +36,7 @@ void Grafo::establecerVecinos(std::string nodo, std::string enlazar){
     adyacencia.enlazarNodo(key,value);
 }
 
-void Grafo::eliminarVecino(string nodo, string eliminar){
+void Grafo::eliminarVecino(QString nodo, QString eliminar){
     int key;
     int value;
 
@@ -53,7 +53,7 @@ void Grafo::eliminarVecino(string nodo, string eliminar){
     adyacencia.eliminarVecino(key,value);
 }
 
-QVector<NodoCerveza* > Grafo::obtenerVecinos(string nombre){
+QVector<NodoCerveza* > Grafo::obtenerVecinos(QString nombre){
     int key;
 
     for(int i = 0; i< counter; i++){
@@ -70,7 +70,7 @@ QVector<NodoCerveza* > Grafo::obtenerVecinos(string nombre){
     return temp;
 }
 
-void Grafo::eliminarNodo(std::string nombre){
+void Grafo::eliminarNodo(QString nombre){
     int key;
 
     for(int i = 0; i< counter; i++){
@@ -124,7 +124,7 @@ QVector<NodoCerveza* > Grafo::obtenerCervezas(){
     return temp;
 }
 
-NodoCerveza* Grafo::obtenerNodo(string nombre){
+NodoCerveza* Grafo::obtenerNodo(QString nombre){
     if(counter == 0){
         throw runtime_error("No hay nodos insertados para obtener");
     }
@@ -133,4 +133,44 @@ NodoCerveza* Grafo::obtenerNodo(string nombre){
             return arbol.find(i);
         }
     }
+}
+
+QVector<NodoCerveza* >  Grafo::obtenerEstilosDeFamilia(QString familia){
+    QVector<NodoCerveza* > temp;
+    int key;
+
+    for(int i = 0; i< counter; i++){
+        if(arbol.find(i)->getNombre() == familia){
+            key = i;
+        }
+    }
+
+    QString estilo = "Estilo";
+    for(int i = 0; i<adyacencia.obtenerVecinos(key).size();i++){
+        //Check this
+        if(arbol.find(adyacencia.obtenerVecinos(key)[i])->getTipoNodo() == estilo){
+            temp = temp << arbol.find(adyacencia.obtenerVecinos(key)[i]);
+        }
+    }
+    return temp;
+}
+
+QVector<NodoCerveza* > Grafo::obtenerCervezasDeEstilo(QString estilo){
+    QVector<NodoCerveza* > temp;
+    int key;
+
+    for(int i = 0; i< counter; i++){
+        if(arbol.find(i)->getNombre() == estilo){
+            key = i;
+        }
+    }
+
+    QString cerveza = "Cerveza";
+    for(int i = 0; i<adyacencia.obtenerVecinos(key).size();i++){
+        //Check this
+        if(arbol.find(adyacencia.obtenerVecinos(key)[i])->getTipoNodo() == cerveza){
+            temp = temp << arbol.find(adyacencia.obtenerVecinos(key)[i]);
+        }
+    }
+    return temp;
 }

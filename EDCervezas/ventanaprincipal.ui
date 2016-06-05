@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>509</width>
-    <height>350</height>
+    <width>609</width>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,11 @@
    <string notr="true">background-color: rgb(85, 170, 127);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btnRegCerveza">
+   <widget class="QPushButton" name="btnRegistrarFamilia">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>70</y>
+      <x>10</x>
+      <y>50</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -30,27 +30,27 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Registrar cerveza</string>
+     <string>Registrar Familia</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnsalir">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>250</y>
+      <x>420</x>
+      <y>260</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>salir</string>
+     <string>Salir</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnBuscarCerveza">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>130</y>
+      <x>220</x>
+      <y>210</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -59,14 +59,14 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Buscar cerveza</string>
+     <string>Consultar Cerveza</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnListaCervezas">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>70</y>
+      <x>430</x>
+      <y>50</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -81,8 +81,8 @@
    <widget class="QPushButton" name="btnBorrarDatos">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>130</y>
+      <x>430</x>
+      <y>110</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -91,14 +91,72 @@
      <string>Borrar datos</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnRegistrarEstilo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Registrar Estilo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRegistrarCerveza">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Registrar Cerveza</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnConsultarEstilo">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Consultar Estilo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnConsultarFamilia">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>50</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Consultar Familia</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>509</width>
-     <height>21</height>
+     <width>609</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

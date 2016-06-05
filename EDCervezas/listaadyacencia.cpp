@@ -22,7 +22,10 @@ void ListaAdyacencia::enlazarNodo(int key, int value){
         }
 
     }*/
+
     mapa[key] =  mapa[key] << value;
+    //Esto hace que haya una relacion bidireccional
+    mapa[value] = mapa[value] <<key;
 
     qDebug()<<"El valor: "<<key<<" esta enlazado con: "<<mapa.value(key);
 }

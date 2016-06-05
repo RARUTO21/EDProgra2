@@ -2,7 +2,7 @@
 
 using namespace std;
 
-NodoCerveza::NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio)
+NodoCerveza::NodoCerveza(QString pNombre, QString pDescripcion, QString pTipoDeFermentacion, QString pTiempoDeFermentacion, QString pTemperatura, QString pColor, QString pTipoNodo, QString pCuerpo, QString pPrecio)
 {
     nombre = pNombre;
     descripcion = pDescripcion;
@@ -19,38 +19,38 @@ NodoCerveza::~NodoCerveza(){
 
 }
 
-std::string NodoCerveza::getNombre(){
+QString NodoCerveza::getNombre(){
     return nombre;
 }
 
-std::string NodoCerveza::getDescripcion(){
+QString NodoCerveza::getDescripcion(){
     return descripcion;
 }
 
-std::string NodoCerveza::getTipoDeFermentacion(){
+QString NodoCerveza::getTipoDeFermentacion(){
     return tipoDeFermentacion;
 }
 
-std::string NodoCerveza::getTiempoDeFermentacion(){
+QString NodoCerveza::getTiempoDeFermentacion(){
     return tiempoDeFermentacion;
 }
 
-std::string NodoCerveza::getTemperatura(){
+QString NodoCerveza::getTemperatura(){
     return temperatura;
 }
 
-std::string NodoCerveza::getColor(){
+QString NodoCerveza::getColor(){
     return color;
 }
 
-std::string NodoCerveza::getTipoNodo(){
+QString NodoCerveza::getTipoNodo(){
     return tipoNodo;
 }
 
-std::string NodoCerveza::getCuerpo(){
+QString NodoCerveza::getCuerpo(){
     return cuerpo;
 }
 
-double NodoCerveza::getPrecio(){
+QString NodoCerveza::getPrecio(){
     return precio;
 }

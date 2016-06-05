@@ -7,31 +7,31 @@ using namespace std;
 class NodoCerveza
 {
 public:
-    NodoCerveza(std::string pNombre, std::string pDescripcion, std::string pTipoDeFermentacion, std::string pTiempoDeFermentacion, std::string pTemperatura, std::string pColor, std::string pTipoNodo, std::string pCuerpo, double pPrecio);
+    NodoCerveza(QString pNombre, QString pDescripcion, QString pTipoDeFermentacion, QString pTiempoDeFermentacion, QString pTemperatura, QString pColor, QString pTipoNodo, QString pCuerpo, QString pPrecio);
     ~NodoCerveza();
 
     //Get de los atributos
     //QString getNombre();
-    std::string getNombre();
-    std::string getDescripcion();
-    std::string getTipoDeFermentacion();
-    std::string getTiempoDeFermentacion();
-    std::string getTemperatura();
-    std::string getColor();
-    std::string getTipoNodo();
-    std::string getCuerpo();
-    double getPrecio();
+    QString getNombre();
+    QString getDescripcion();
+    QString getTipoDeFermentacion();
+    QString getTiempoDeFermentacion();
+    QString getTemperatura();
+    QString getColor();
+    QString getTipoNodo();
+    QString getCuerpo();
+    QString getPrecio();
 
 private:
-    std::string nombre;
-    std::string descripcion;
-    std::string tipoDeFermentacion;
-    std::string tiempoDeFermentacion;
-    std::string temperatura;
-    std::string color;
-    std::string tipoNodo;
-    std::string cuerpo;
-    double precio;
+    QString nombre;
+    QString descripcion;
+    QString tipoDeFermentacion;
+    QString tiempoDeFermentacion;
+    QString temperatura;
+    QString color;
+    QString tipoNodo;
+    QString cuerpo;
+    QString precio;
 
 };
 

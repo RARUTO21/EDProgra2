@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "grafo.h"
+
 namespace Ui {
 class VentanaPrincipal;
 }
@@ -16,13 +18,7 @@ public:
     ~VentanaPrincipal();
 
 private slots:
-    void on_btnRegCerveza_clicked();
-
     void on_btnsalir_clicked();
-
-    //void on_btnRegFamilia_clicked();
-
-    //void on_btnRegEstilo_clicked();
 
     void on_btnBuscarCerveza_clicked();
 
@@ -30,8 +26,19 @@ private slots:
 
     void on_btnBorrarDatos_clicked();
 
+    void on_btnRegistrarEstilo_clicked();
+
+    void on_btnRegistrarFamilia_clicked();
+
+    void on_btnRegistrarCerveza_clicked();
+
+    void on_btnConsultarEstilo_clicked();
+
+    void on_btnConsultarFamilia_clicked();
+
 private:
     Ui::VentanaPrincipal *ui;
+    Grafo grafo;
 };
 
 #endif // VENTANAPRINCIPAL_H
