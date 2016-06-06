@@ -17,6 +17,8 @@ public:
     explicit VentanaRegistrarFamilia(Grafo * grafo,QWidget *parent = 0);
     ~VentanaRegistrarFamilia();
 
+    bool validarCampos();
+
 private slots:
     void on_buttonBox_accepted();
 

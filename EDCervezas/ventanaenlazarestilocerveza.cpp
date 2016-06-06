@@ -16,6 +16,8 @@ VentanaEnlazarEstiloCerveza::VentanaEnlazarEstiloCerveza(Grafo * grafo, QWidget 
        ui->comboEstilos->addItem(grafo->obtenerEstilos()[i]->getNombre());
     }
 
+    ui->comboCervezas->clear();
+
     for(int i = 0; i < grafo->obtenerCervezasNoVecinas(ui->comboEstilos->currentText()).size(); i++){
        ui->comboCervezas->addItem(grafo->obtenerCervezasNoVecinas(ui->comboEstilos->currentText())[i]->getNombre());
     }
@@ -38,6 +40,11 @@ void VentanaEnlazarEstiloCerveza::on_btnEnlazar_clicked()
 {
     grafoPuntero->establecerVecinos(ui->comboEstilos->currentText(),ui->comboCervezas->currentText());
 
+    QMessageBox *mensaje = new QMessageBox(this);
+    QString success = "Estilo: "+ui->comboEstilos->currentText()+ " <- enlazado con -> Cerveza: "+ui->comboCervezas->currentText();
+    mensaje->setText(success);
+    mensaje->exec();
+
     ui->comboCervezas->clear();
 
     for(int i = 0; i < grafoPuntero->obtenerCervezasNoVecinas(ui->comboEstilos->currentText()).size(); i++){
@@ -51,10 +58,6 @@ void VentanaEnlazarEstiloCerveza::on_btnEnlazar_clicked()
         ui->btnEnlazar->setEnabled(true);
     }
 
-    QMessageBox *mensaje = new QMessageBox(this);
-    QString success = "Estilo: "+ui->comboEstilos->currentText()+ " <- enlazado con -> Cerveza: "+ui->comboCervezas->currentText();
-    mensaje->setText(success);
-    mensaje->exec();
 }
 
 void VentanaEnlazarEstiloCerveza::on_comboEstilos_currentIndexChanged(int index)

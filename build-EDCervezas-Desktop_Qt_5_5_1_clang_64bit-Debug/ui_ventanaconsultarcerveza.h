@@ -136,7 +136,7 @@ public:
         label_11->setGeometry(QRect(380, 210, 59, 16));
         btnConsultar = new QPushButton(VentanaConsultarCerveza);
         btnConsultar->setObjectName(QStringLiteral("btnConsultar"));
-        btnConsultar->setGeometry(QRect(380, 350, 80, 24));
+        btnConsultar->setGeometry(QRect(380, 350, 91, 24));
         label_12 = new QLabel(VentanaConsultarCerveza);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(380, 280, 59, 16));

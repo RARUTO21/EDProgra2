@@ -6,156 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>756</width>
-    <height>359</height>
+    <width>403</width>
+    <height>445</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>VentanaPrincipal</string>
+   <string>Sistema de Cervezas</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(85, 170, 127);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btnRegistrarFamilia">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Registrar Familia</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnsalir">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>260</y>
-      <width>75</width>
-      <height>23</height>
+      <x>300</x>
+      <y>370</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Salir</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnBuscarCerveza">
+   <widget class="QGroupBox" name="grbEnlazar">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>210</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Consultar Cerveza</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnListaCervezas">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>40</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Lista cervezas por familia</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnBorrarDatos">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>130</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Borrar datos</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnRegistrarEstilo">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Registrar Estilo</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnRegistrarCerveza">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>210</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Registrar Cerveza</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnConsultarEstilo">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>130</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Consultar Estilo</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnConsultarFamilia">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>50</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Consultar Familia</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>40</y>
-      <width>171</width>
-      <height>141</height>
+      <x>20</x>
+      <y>220</y>
+      <width>161</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="title">
@@ -164,7 +45,7 @@
     <widget class="QPushButton" name="btnEnlazarFamiliaEstilo">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>30</y>
        <width>141</width>
        <height>41</height>
@@ -177,8 +58,163 @@
     <widget class="QPushButton" name="btnEnlazarEstiloCerveza">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>90</y>
+       <x>10</x>
+       <y>80</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estilo - Cerveza</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grbRegistrar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>161</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Registrar</string>
+    </property>
+    <widget class="QPushButton" name="btnRegistrarFamilia">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Familia</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnRegistrarEstilo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estilo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnRegistrarCerveza">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cerveza</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grbConsultar">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>20</y>
+      <width>161</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Consultar</string>
+    </property>
+    <widget class="QPushButton" name="btnConsultarFamilia">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Familia</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnConsultarEstilo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estilo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnBuscarCerveza">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Cerveza</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grbEliminar">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>220</y>
+      <width>161</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Desenlazar</string>
+    </property>
+    <widget class="QPushButton" name="btnEliminarEstilo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Familia - Estilo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnEliminarCerveza">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
        <width>141</width>
        <height>41</height>
       </rect>
@@ -194,7 +230,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>756</width>
+     <width>403</width>
      <height>22</height>
     </rect>
    </property>

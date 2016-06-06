@@ -14,16 +14,31 @@ VentanaConsultarCerveza::VentanaConsultarCerveza(Grafo *grafo, QWidget *parent) 
 
     ui->comboEstilos->clear();
 
-    for(int i = 0; i < grafoPuntero->obtenerEstilosDeFamilia(grafoPuntero->obtenerFamilias()[0]->getNombre()).size(); i++){
-        ui->comboEstilos->addItem(grafoPuntero->obtenerEstilosDeFamilia(grafoPuntero->obtenerFamilias()[0]->getNombre())[i]->getNombre());
+    for(int i = 0; i < grafoPuntero->obtenerEstilosDeFamilia(ui->comboFamilias->currentText()).size(); i++){
+        ui->comboEstilos->addItem(grafoPuntero->obtenerEstilosDeFamilia(ui->comboFamilias->currentText())[i]->getNombre());
     }
+
 
     ui->comboCervezas->clear();
 
-    for(int i = 0; i < grafoPuntero->obtenerCervezasDeEstilo(grafoPuntero->obtenerEstilos()[0]->getNombre()).size(); i++){
-        ui->comboCervezas->addItem(grafoPuntero->obtenerCervezasDeEstilo(grafoPuntero->obtenerEstilos()[0]->getNombre())[i]->getNombre());
+    for(int i = 0; i < grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText()).size(); i++){
+        ui->comboCervezas->addItem(grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText())[i]->getNombre());
     }
 
+    if(ui->comboEstilos->currentText() == ""){
+        ui->btnConsultar->setEnabled(false);
+        ui->comboCervezas->clear();
+    }
+    else{
+        ui->btnConsultar->setEnabled(true);
+    }
+
+    if(ui->comboCervezas->currentText() == ""){
+        ui->btnConsultar->setEnabled(false);
+    }
+    else{
+        ui->btnConsultar->setEnabled(true);
+    }
 }
 
 VentanaConsultarCerveza::~VentanaConsultarCerveza()
@@ -54,12 +69,24 @@ void VentanaConsultarCerveza::on_comboFamilias_currentIndexChanged(int index)
         ui->comboEstilos->addItem(grafoPuntero->obtenerEstilosDeFamilia(grafoPuntero->obtenerFamilias()[index]->getNombre())[i]->getNombre());
     }
 
-    //FALTA AGREGARLE LOS VALORES AL COMBO DE CERVEZAS PARA ESTE ESTILO ACTUAL [0]
+    if(ui->comboEstilos->currentText() == ""){
+        ui->btnConsultar->setEnabled(false);
+        ui->comboCervezas->clear();
+    }
+    else{
+        ui->btnConsultar->setEnabled(true);
+    }
 
     ui->comboCervezas->clear();
 
     for(int i = 0; i < grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText()).size();i++){
         ui->comboCervezas->addItem(grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText())[i]->getNombre());
+    }
+    if(ui->comboCervezas->currentText() == ""){
+        ui->btnConsultar->setEnabled(false);
+    }
+    else{
+        ui->btnConsultar->setEnabled(true);
     }
 }
 
@@ -69,5 +96,12 @@ void VentanaConsultarCerveza::on_comboEstilos_currentIndexChanged(int index)
 
     for(int i = 0; i < grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText()).size(); i++){
         ui->comboCervezas->addItem(grafoPuntero->obtenerCervezasDeEstilo(ui->comboEstilos->currentText())[i]->getNombre());
+    }
+
+    if(ui->comboCervezas->currentText() == ""){
+        ui->btnConsultar->setEnabled(false);
+    }
+    else{
+        ui->btnConsultar->setEnabled(true);
     }
 }

@@ -39,6 +39,11 @@ void VentanaEnlazarFamiliaEstilo::on_btnEnlazar_clicked()
 {
     grafoPuntero->establecerVecinos(ui->comboFamilias->currentText(),ui->comboEstilos->currentText());
 
+    QMessageBox *mensaje = new QMessageBox(this);
+    QString success = "Familia: "+ui->comboFamilias->currentText()+ " <- enlazada con -> Estilo: "+ui->comboEstilos->currentText();
+    mensaje->setText(success);
+    mensaje->exec();
+
     ui->comboEstilos->clear();
 
     for(int i = 0; i < grafoPuntero->obtenerEstilosNoVecinos(ui->comboFamilias->currentText()).size(); i++){
@@ -51,13 +56,6 @@ void VentanaEnlazarFamiliaEstilo::on_btnEnlazar_clicked()
     else{
         ui->btnEnlazar->setEnabled(true);
     }
-
-
-
-    QMessageBox *mensaje = new QMessageBox(this);
-    QString success = "Familia: "+ui->comboFamilias->currentText()+ " <- enlazado con -> Estilo: "+ui->comboEstilos->currentText();
-    mensaje->setText(success);
-    mensaje->exec();
 
 }
 

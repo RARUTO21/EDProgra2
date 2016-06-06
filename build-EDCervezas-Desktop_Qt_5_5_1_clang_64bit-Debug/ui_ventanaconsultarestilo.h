@@ -94,7 +94,7 @@ public:
         label_6->setGeometry(QRect(30, 320, 59, 16));
         btnConsultar = new QPushButton(VentanaConsultarEstilo);
         btnConsultar->setObjectName(QStringLiteral("btnConsultar"));
-        btnConsultar->setGeometry(QRect(390, 290, 80, 24));
+        btnConsultar->setGeometry(QRect(390, 290, 91, 24));
         lnePrecio = new QLineEdit(VentanaConsultarEstilo);
         lnePrecio->setObjectName(QStringLiteral("lnePrecio"));
         lnePrecio->setEnabled(false);

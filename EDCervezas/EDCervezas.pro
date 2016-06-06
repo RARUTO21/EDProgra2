@@ -16,10 +16,6 @@ SOURCES += main.cpp\
     ventanaprincipal.cpp \
     listaadyacencia.cpp \
     nodocerveza.cpp \
-    registrarcerveza.cpp \
-    buscarcerveza.cpp \
-    listacervezasfamilia.cpp \
-    borrardatos.cpp \
     grafo.cpp \
     ventanaregistrarfamilia.cpp \
     ventanaregistrarestilo.cpp \
@@ -28,17 +24,15 @@ SOURCES += main.cpp\
     ventanaconsultarfamilia.cpp \
     ventanaconsultarestilo.cpp \
     ventanaenlazarfamiliaestilo.cpp \
-    ventanaenlazarestilocerveza.cpp
+    ventanaenlazarestilocerveza.cpp \
+    ventanaeliminarestilo.cpp \
+    ventanaeliminarcerveza.cpp
 HEADERS  += ventanaprincipal.h \
     dnode.h \
     dlinkedlist.h \
     arraylist.h \
     listaadyacencia.h \
     nodocerveza.h \
-    registrarcerveza.h \
-    buscarcerveza.h \
-    listacervezasfamilia.h \
-    borrardatos.h \
     bstnode.h \
     bstree.h \
     grafo.h \
@@ -49,12 +43,10 @@ HEADERS  += ventanaprincipal.h \
     ventanaconsultarfamilia.h \
     ventanaconsultarestilo.h \
     ventanaenlazarfamiliaestilo.h \
-    ventanaenlazarestilocerveza.h
+    ventanaenlazarestilocerveza.h \
+    ventanaeliminarestilo.h \
+    ventanaeliminarcerveza.h
 FORMS    += ventanaprincipal.ui \
-    registrarcerveza.ui \
-    buscarcerveza.ui \
-    listacervezasfamilia.ui \
-    borrardatos.ui \
     ventanaregistrarfamilia.ui \
     ventanaregistrarestilo.ui \
     ventanaregistrarcerveza.ui \
@@ -62,4 +54,6 @@ FORMS    += ventanaprincipal.ui \
     ventanaconsultarfamilia.ui \
     ventanaconsultarestilo.ui \
     ventanaenlazarfamiliaestilo.ui \
-    ventanaenlazarestilocerveza.ui
+    ventanaenlazarestilocerveza.ui \
+    ventanaeliminarestilo.ui \
+    ventanaeliminarcerveza.ui

@@ -8,6 +8,8 @@ VentanaConsultarFamilia::VentanaConsultarFamilia(Grafo * grafo,QWidget *parent) 
     ui->setupUi(this);
     grafoPuntero = grafo;
 
+    ui->comboFamilias->clear();
+
     for(int i = 0; i < grafo->obtenerFamilias().size(); i++){
         ui->comboFamilias->addItem(grafo->obtenerFamilias()[i]->getNombre());
     }

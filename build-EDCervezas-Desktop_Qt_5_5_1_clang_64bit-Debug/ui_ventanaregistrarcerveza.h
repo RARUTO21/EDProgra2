@@ -122,6 +122,15 @@ public:
         comboEstilos = new QComboBox(VentanaRegistrarCerveza);
         comboEstilos->setObjectName(QStringLiteral("comboEstilos"));
         comboEstilos->setGeometry(QRect(190, 480, 151, 24));
+        QWidget::setTabOrder(lneNombre, txeDescripcion);
+        QWidget::setTabOrder(txeDescripcion, lneTipoDeFermentacion);
+        QWidget::setTabOrder(lneTipoDeFermentacion, lneTiempoDeFermentacion);
+        QWidget::setTabOrder(lneTiempoDeFermentacion, lneTemperatura);
+        QWidget::setTabOrder(lneTemperatura, lneColor);
+        QWidget::setTabOrder(lneColor, lneCuerpo);
+        QWidget::setTabOrder(lneCuerpo, lnePrecio);
+        QWidget::setTabOrder(lnePrecio, comboFamilias);
+        QWidget::setTabOrder(comboFamilias, comboEstilos);
 
         retranslateUi(VentanaRegistrarCerveza);
         QObject::connect(buttonBox, SIGNAL(accepted()), VentanaRegistrarCerveza, SLOT(accept()));

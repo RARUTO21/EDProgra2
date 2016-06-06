@@ -1,15 +1,14 @@
 #include "ventanaprincipal.h"
 #include "ui_ventanaprincipal.h"
-#include "registrarcerveza.h"
 #include "registrarfamiliacerveza.h"
 #include "registrarestilocerveza.h"
-#include "buscarcerveza.h"
-#include "listacervezasfamilia.h"
-#include "borrardatos.h"
 
 #include "ventanaregistrarfamilia.h"
 #include "ventanaregistrarestilo.h"
 #include "ventanaregistrarcerveza.h"
+
+#include "ventanaeliminarcerveza.h"
+#include "ventanaeliminarestilo.h"
 
 #include "ventanaconsultarcerveza.h"
 #include "ventanaconsultarestilo.h"
@@ -44,45 +43,25 @@ void VentanaPrincipal::on_btnBuscarCerveza_clicked()
     ventana->exec();
 }
 
-void VentanaPrincipal::on_btnListaCervezas_clicked()
-{
-    ListaCervezasFamilia * ventana = new ListaCervezasFamilia();
-    ventana->show();
-    close();
-}
-
-void VentanaPrincipal::on_btnBorrarDatos_clicked()
-{
-    BorrarDatos * ventana = new BorrarDatos();
-    ventana->show();
-    close();
-}
 
 void VentanaPrincipal::on_btnRegistrarEstilo_clicked()
 {
         VentanaRegistrarEstilo * ventana = new VentanaRegistrarEstilo(&grafo);
         ventana->exec();
-
-        ui->btnRegistrarCerveza->setEnabled(true);
-        ui->btnConsultarEstilo->setEnabled(true);
 }
 
 void VentanaPrincipal::on_btnRegistrarFamilia_clicked()
 {
     VentanaRegistrarFamilia * ventana = new VentanaRegistrarFamilia(&grafo);
     ventana->exec();
-    ui->btnRegistrarEstilo->setEnabled(true);
-    ui->btnConsultarFamilia->setEnabled(true);
 
-    qDebug()<<grafo.obtenerFamilias();
+    //qDebug()<<grafo.obtenerFamilias();
 }
 
 void VentanaPrincipal::on_btnRegistrarCerveza_clicked()
 {
     VentanaRegistrarCerveza * ventana = new VentanaRegistrarCerveza(&grafo);
     ventana->exec();
-
-    ui->btnBuscarCerveza->setEnabled(true);
 }
 
 void VentanaPrincipal::on_btnConsultarEstilo_clicked()
@@ -106,5 +85,17 @@ void VentanaPrincipal::on_btnEnlazarFamiliaEstilo_clicked()
 void VentanaPrincipal::on_btnEnlazarEstiloCerveza_clicked()
 {
     VentanaEnlazarEstiloCerveza * ventana = new VentanaEnlazarEstiloCerveza(&grafo);
+    ventana->exec();
+}
+
+void VentanaPrincipal::on_btnEliminarEstilo_clicked()
+{
+    VentanaEliminarEstilo * ventana = new VentanaEliminarEstilo(&grafo);
+    ventana->exec();
+}
+
+void VentanaPrincipal::on_btnEliminarCerveza_clicked()
+{
+    VentanaEliminarCerveza * ventana = new VentanaEliminarCerveza(&grafo);
     ventana->exec();
 }

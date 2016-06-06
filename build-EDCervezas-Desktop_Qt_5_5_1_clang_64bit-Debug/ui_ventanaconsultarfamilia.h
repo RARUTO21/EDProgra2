@@ -75,7 +75,7 @@ public:
         label_7->setGeometry(QRect(20, 340, 59, 16));
         btnConsultar = new QPushButton(VentanaConsultarFamilia);
         btnConsultar->setObjectName(QStringLiteral("btnConsultar"));
-        btnConsultar->setGeometry(QRect(380, 200, 80, 24));
+        btnConsultar->setGeometry(QRect(380, 200, 91, 24));
         label_9 = new QLabel(VentanaConsultarFamilia);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(130, 20, 231, 16));

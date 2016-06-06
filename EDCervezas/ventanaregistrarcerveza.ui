@@ -273,6 +273,18 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lneNombre</tabstop>
+  <tabstop>txeDescripcion</tabstop>
+  <tabstop>lneTipoDeFermentacion</tabstop>
+  <tabstop>lneTiempoDeFermentacion</tabstop>
+  <tabstop>lneTemperatura</tabstop>
+  <tabstop>lneColor</tabstop>
+  <tabstop>lneCuerpo</tabstop>
+  <tabstop>lnePrecio</tabstop>
+  <tabstop>comboFamilias</tabstop>
+  <tabstop>comboEstilos</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

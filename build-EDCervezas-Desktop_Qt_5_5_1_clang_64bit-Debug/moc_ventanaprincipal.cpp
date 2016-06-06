@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VentanaPrincipal_t {
     QByteArrayData data[13];
-    char stringdata0[343];
+    char stringdata0[348];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,28 +33,28 @@ QT_MOC_LITERAL(0, 0, 16), // "VentanaPrincipal"
 QT_MOC_LITERAL(1, 17, 19), // "on_btnsalir_clicked"
 QT_MOC_LITERAL(2, 37, 0), // ""
 QT_MOC_LITERAL(3, 38, 27), // "on_btnBuscarCerveza_clicked"
-QT_MOC_LITERAL(4, 66, 27), // "on_btnListaCervezas_clicked"
-QT_MOC_LITERAL(5, 94, 25), // "on_btnBorrarDatos_clicked"
-QT_MOC_LITERAL(6, 120, 29), // "on_btnRegistrarEstilo_clicked"
-QT_MOC_LITERAL(7, 150, 30), // "on_btnRegistrarFamilia_clicked"
-QT_MOC_LITERAL(8, 181, 30), // "on_btnRegistrarCerveza_clicked"
-QT_MOC_LITERAL(9, 212, 29), // "on_btnConsultarEstilo_clicked"
-QT_MOC_LITERAL(10, 242, 30), // "on_btnConsultarFamilia_clicked"
-QT_MOC_LITERAL(11, 273, 34), // "on_btnEnlazarFamiliaEstilo_cl..."
-QT_MOC_LITERAL(12, 308, 34) // "on_btnEnlazarEstiloCerveza_cl..."
+QT_MOC_LITERAL(4, 66, 29), // "on_btnRegistrarEstilo_clicked"
+QT_MOC_LITERAL(5, 96, 30), // "on_btnRegistrarFamilia_clicked"
+QT_MOC_LITERAL(6, 127, 30), // "on_btnRegistrarCerveza_clicked"
+QT_MOC_LITERAL(7, 158, 29), // "on_btnConsultarEstilo_clicked"
+QT_MOC_LITERAL(8, 188, 30), // "on_btnConsultarFamilia_clicked"
+QT_MOC_LITERAL(9, 219, 34), // "on_btnEnlazarFamiliaEstilo_cl..."
+QT_MOC_LITERAL(10, 254, 34), // "on_btnEnlazarEstiloCerveza_cl..."
+QT_MOC_LITERAL(11, 289, 28), // "on_btnEliminarEstilo_clicked"
+QT_MOC_LITERAL(12, 318, 29) // "on_btnEliminarCerveza_clicked"
 
     },
     "VentanaPrincipal\0on_btnsalir_clicked\0"
     "\0on_btnBuscarCerveza_clicked\0"
-    "on_btnListaCervezas_clicked\0"
-    "on_btnBorrarDatos_clicked\0"
     "on_btnRegistrarEstilo_clicked\0"
     "on_btnRegistrarFamilia_clicked\0"
     "on_btnRegistrarCerveza_clicked\0"
     "on_btnConsultarEstilo_clicked\0"
     "on_btnConsultarFamilia_clicked\0"
     "on_btnEnlazarFamiliaEstilo_clicked\0"
-    "on_btnEnlazarEstiloCerveza_clicked"
+    "on_btnEnlazarEstiloCerveza_clicked\0"
+    "on_btnEliminarEstilo_clicked\0"
+    "on_btnEliminarCerveza_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -108,15 +108,15 @@ void VentanaPrincipal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: _t->on_btnsalir_clicked(); break;
         case 1: _t->on_btnBuscarCerveza_clicked(); break;
-        case 2: _t->on_btnListaCervezas_clicked(); break;
-        case 3: _t->on_btnBorrarDatos_clicked(); break;
-        case 4: _t->on_btnRegistrarEstilo_clicked(); break;
-        case 5: _t->on_btnRegistrarFamilia_clicked(); break;
-        case 6: _t->on_btnRegistrarCerveza_clicked(); break;
-        case 7: _t->on_btnConsultarEstilo_clicked(); break;
-        case 8: _t->on_btnConsultarFamilia_clicked(); break;
-        case 9: _t->on_btnEnlazarFamiliaEstilo_clicked(); break;
-        case 10: _t->on_btnEnlazarEstiloCerveza_clicked(); break;
+        case 2: _t->on_btnRegistrarEstilo_clicked(); break;
+        case 3: _t->on_btnRegistrarFamilia_clicked(); break;
+        case 4: _t->on_btnRegistrarCerveza_clicked(); break;
+        case 5: _t->on_btnConsultarEstilo_clicked(); break;
+        case 6: _t->on_btnConsultarFamilia_clicked(); break;
+        case 7: _t->on_btnEnlazarFamiliaEstilo_clicked(); break;
+        case 8: _t->on_btnEnlazarEstiloCerveza_clicked(); break;
+        case 9: _t->on_btnEliminarEstilo_clicked(); break;
+        case 10: _t->on_btnEliminarCerveza_clicked(); break;
         default: ;
         }
     }

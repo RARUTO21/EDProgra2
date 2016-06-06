@@ -22,10 +22,6 @@ private slots:
 
     void on_btnBuscarCerveza_clicked();
 
-    void on_btnListaCervezas_clicked();
-
-    void on_btnBorrarDatos_clicked();
-
     void on_btnRegistrarEstilo_clicked();
 
     void on_btnRegistrarFamilia_clicked();
@@ -36,11 +32,13 @@ private slots:
 
     void on_btnConsultarFamilia_clicked();
 
-
-
     void on_btnEnlazarFamiliaEstilo_clicked();
 
     void on_btnEnlazarEstiloCerveza_clicked();
+
+    void on_btnEliminarEstilo_clicked();
+
+    void on_btnEliminarCerveza_clicked();
 
 private:
     Ui::VentanaPrincipal *ui;

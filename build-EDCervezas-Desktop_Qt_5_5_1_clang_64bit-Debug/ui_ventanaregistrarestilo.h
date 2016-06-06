@@ -62,7 +62,7 @@ public:
         label_2->setGeometry(QRect(30, 130, 81, 16));
         label_9 = new QLabel(VentanaRegistrarEstilo);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(90, 30, 241, 16));
+        label_9->setGeometry(QRect(70, 30, 241, 16));
         lneTipoDeFermentacion = new QLineEdit(VentanaRegistrarEstilo);
         lneTipoDeFermentacion->setObjectName(QStringLiteral("lneTipoDeFermentacion"));
         lneTipoDeFermentacion->setGeometry(QRect(190, 200, 151, 24));
@@ -114,6 +114,14 @@ public:
         comboFamilias = new QComboBox(VentanaRegistrarEstilo);
         comboFamilias->setObjectName(QStringLiteral("comboFamilias"));
         comboFamilias->setGeometry(QRect(190, 440, 151, 24));
+        QWidget::setTabOrder(lneNombre, txeDescripcion);
+        QWidget::setTabOrder(txeDescripcion, lneTipoDeFermentacion);
+        QWidget::setTabOrder(lneTipoDeFermentacion, lneTiempoDeFermentacion);
+        QWidget::setTabOrder(lneTiempoDeFermentacion, lneTemperatura);
+        QWidget::setTabOrder(lneTemperatura, lneColor);
+        QWidget::setTabOrder(lneColor, lneCuerpo);
+        QWidget::setTabOrder(lneCuerpo, lnePrecio);
+        QWidget::setTabOrder(lnePrecio, comboFamilias);
 
         retranslateUi(VentanaRegistrarEstilo);
         QObject::connect(buttonBox, SIGNAL(accepted()), VentanaRegistrarEstilo, SLOT(accept()));

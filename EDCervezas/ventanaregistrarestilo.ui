@@ -45,7 +45,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>70</x>
      <y>30</y>
      <width>241</width>
      <height>16</height>
@@ -250,6 +250,17 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lneNombre</tabstop>
+  <tabstop>txeDescripcion</tabstop>
+  <tabstop>lneTipoDeFermentacion</tabstop>
+  <tabstop>lneTiempoDeFermentacion</tabstop>
+  <tabstop>lneTemperatura</tabstop>
+  <tabstop>lneColor</tabstop>
+  <tabstop>lneCuerpo</tabstop>
+  <tabstop>lnePrecio</tabstop>
+  <tabstop>comboFamilias</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

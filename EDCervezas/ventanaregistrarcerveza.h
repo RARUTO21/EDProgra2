@@ -16,6 +16,8 @@ public:
     explicit VentanaRegistrarCerveza(Grafo *grafo, QWidget *parent = 0);
     ~VentanaRegistrarCerveza();
 
+    bool validarCampos();
+
 private slots:
 
     void on_comboFamilias_currentIndexChanged(int index);

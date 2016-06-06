@@ -86,7 +86,7 @@ public:
         lneNombre->setGeometry(QRect(180, 90, 151, 24));
         label_9 = new QLabel(VentanaRegistrarFamilia);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(70, 30, 211, 16));
+        label_9->setGeometry(QRect(60, 30, 231, 16));
         lneTipoDeFermentacion = new QLineEdit(VentanaRegistrarFamilia);
         lneTipoDeFermentacion->setObjectName(QStringLiteral("lneTipoDeFermentacion"));
         lneTipoDeFermentacion->setGeometry(QRect(180, 200, 151, 24));
@@ -105,6 +105,13 @@ public:
         lnePrecio = new QLineEdit(VentanaRegistrarFamilia);
         lnePrecio->setObjectName(QStringLiteral("lnePrecio"));
         lnePrecio->setGeometry(QRect(180, 400, 151, 24));
+        QWidget::setTabOrder(lneNombre, txeDescripcion);
+        QWidget::setTabOrder(txeDescripcion, lneTipoDeFermentacion);
+        QWidget::setTabOrder(lneTipoDeFermentacion, lneTiempoDeFermentacion);
+        QWidget::setTabOrder(lneTiempoDeFermentacion, lneTemperatura);
+        QWidget::setTabOrder(lneTemperatura, lneColor);
+        QWidget::setTabOrder(lneColor, lneCuerpo);
+        QWidget::setTabOrder(lneCuerpo, lnePrecio);
 
         retranslateUi(VentanaRegistrarFamilia);
         QObject::connect(buttonBox, SIGNAL(accepted()), VentanaRegistrarFamilia, SLOT(accept()));
@@ -124,7 +131,7 @@ public:
         label_6->setText(QApplication::translate("VentanaRegistrarFamilia", "Color", 0));
         label_7->setText(QApplication::translate("VentanaRegistrarFamilia", "Cuerpo", 0));
         label_8->setText(QApplication::translate("VentanaRegistrarFamilia", "Precio", 0));
-        label_9->setText(QApplication::translate("VentanaRegistrarFamilia", "REGISTRO DE TIPO DE CERVEZA", 0));
+        label_9->setText(QApplication::translate("VentanaRegistrarFamilia", "REGISTRO DE FAMILIA DE CERVEZA", 0));
     } // retranslateUi
 
 };

@@ -156,14 +156,14 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>60</x>
      <y>30</y>
-     <width>211</width>
+     <width>231</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>REGISTRO DE TIPO DE CERVEZA</string>
+    <string>REGISTRO DE FAMILIA DE CERVEZA</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lneTipoDeFermentacion">
@@ -227,6 +227,16 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lneNombre</tabstop>
+  <tabstop>txeDescripcion</tabstop>
+  <tabstop>lneTipoDeFermentacion</tabstop>
+  <tabstop>lneTiempoDeFermentacion</tabstop>
+  <tabstop>lneTemperatura</tabstop>
+  <tabstop>lneColor</tabstop>
+  <tabstop>lneCuerpo</tabstop>
+  <tabstop>lnePrecio</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
