@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     grafo.cpp \
     matrizadyacencia.cpp \
     nodociudad.cpp \
-    doublespinboxdelegate.cpp
+    doublespinboxdelegate.cpp \
+    renderarea.cpp
 
 HEADERS  += widget.h \
     arraylist.h \
@@ -26,7 +27,8 @@ HEADERS  += widget.h \
     grafo.h \
     matrizadyacencia.h \
     nodociudad.h \
-    doublespinboxdelegate.h
+    doublespinboxdelegate.h \
+    renderarea.h
 
 FORMS    += widget.ui
 

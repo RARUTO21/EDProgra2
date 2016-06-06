@@ -3,6 +3,11 @@
 
 #include <QWidget>
 #include <QTableWidgetItem>
+#include <QDebug>
+#include "grafo.h"
+
+
+
 namespace Ui {
 class Widget;
 }
@@ -29,7 +34,17 @@ private slots:
     void on_btnPrim_clicked();
     void on_btnKruskal_clicked();
 
+    void on_pbAddArista_clicked();
+
+    void on_leInicio_cursorPositionChanged(int arg1, int arg2);
+
 private:
+    //RenderArea *AreaRender;
+    //WireLess *W;
+    float **A;
+    void CargarTabladeGrafo();
+    void CargarTablaFloyd();
+    void Floyd();
     Ui::Widget *ui;
     QStandardItemModel *mModelA;
     int u;

@@ -9,6 +9,10 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    //this->AreaRender = new RenderArea();
+    // Crea la red interna, con 6 nodos, con 5 de alcance
+    // y los nodos se generan entre 600 a 500 (area )
+    //this->W = new WireLess(15,25.0,500,400);
     u = 0;
     f = -1;
     mModelA = new QStandardItemModel(this);
@@ -79,6 +83,16 @@ void Widget::on_pushButtonAgregar_clicked()
 
 void Widget::on_btnFloyd_clicked()
 {
+    // Algoritmo de Floyd
+
+    /*for (int k =0; k<W->grafo->getSize();k++)
+        for (int i =0; i<W->grafo->getSize();i++)
+            for (int j =0; j<W->grafo->getSize();j++)
+            {
+               float peso = A[i][k] + A[k][j];
+               if(peso < Grafo::INFINITO)
+                   if (peso < A[i][j])
+                       A[i][j] = peso ;}*/
 
 }
 
@@ -95,4 +109,18 @@ void Widget::on_btnPrim_clicked()
 void Widget::on_btnKruskal_clicked()
 {
 
+}
+
+void Widget::on_pbAddArista_clicked()
+{
+    /*this->W->grafo->addArista(ui->leInicio->text().toInt(),
+                           ui->leFinal->text().toInt(),
+                           ui->lePeso->text().toFloat());
+
+    this->AreaRender->update();*/
+}
+
+void Widget::on_leInicio_cursorPositionChanged(int arg1, int arg2)
+{
+  // se agrega el valor del primer nodo
 }
