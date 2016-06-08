@@ -29,8 +29,6 @@ public:
     QVector<NodoCerveza* > obtenerEstilosNoVecinos(QString familia);
     QVector<NodoCerveza* > obtenerCervezasNoVecinas(QString estilo);
 
-    //BSTree<int,NodoCerveza* > obtenerNodos();
-
     NodoCerveza* obtenerNodo(QString nombre);
 
     bool sonVecinos(QString nodo1, QString nodo2);
@@ -38,9 +36,9 @@ public:
     int getSize();
 
 private:
-    int counter;
-    BSTree<int,NodoCerveza* > arbol;
-    ListaAdyacencia adyacencia;
+    int counter; //Contador que va a manejar la llave asociada a cada nodo del árbol que almacena valores de tipo NodoCerveza
+    BSTree<int,NodoCerveza* > arbol; //Árbol de búsqueda binaria que se encarga de almacenar valores de tipo NodoCerveza
+    ListaAdyacencia adyacencia; //Lista de adyacencia que se encarga llevar el control de los vecinos
 
 };
 

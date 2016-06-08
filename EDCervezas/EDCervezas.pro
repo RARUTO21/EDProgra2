@@ -28,9 +28,6 @@ SOURCES += main.cpp\
     ventanaeliminarestilo.cpp \
     ventanaeliminarcerveza.cpp
 HEADERS  += ventanaprincipal.h \
-    dnode.h \
-    dlinkedlist.h \
-    arraylist.h \
     listaadyacencia.h \
     nodocerveza.h \
     bstnode.h \

@@ -43,19 +43,16 @@ void VentanaPrincipal::on_btnBuscarCerveza_clicked()
     ventana->exec();
 }
 
-
 void VentanaPrincipal::on_btnRegistrarEstilo_clicked()
 {
-        VentanaRegistrarEstilo * ventana = new VentanaRegistrarEstilo(&grafo);
-        ventana->exec();
+    VentanaRegistrarEstilo * ventana = new VentanaRegistrarEstilo(&grafo);
+    ventana->exec();
 }
 
 void VentanaPrincipal::on_btnRegistrarFamilia_clicked()
 {
     VentanaRegistrarFamilia * ventana = new VentanaRegistrarFamilia(&grafo);
     ventana->exec();
-
-    //qDebug()<<grafo.obtenerFamilias();
 }
 
 void VentanaPrincipal::on_btnRegistrarCerveza_clicked()

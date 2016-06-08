@@ -37,7 +37,7 @@ public:
     {
         if (VentanaEliminarEstilo->objectName().isEmpty())
             VentanaEliminarEstilo->setObjectName(QStringLiteral("VentanaEliminarEstilo"));
-        VentanaEliminarEstilo->resize(276, 378);
+        VentanaEliminarEstilo->resize(304, 378);
         buttonBox = new QDialogButtonBox(VentanaEliminarEstilo);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(40, 330, 181, 32));

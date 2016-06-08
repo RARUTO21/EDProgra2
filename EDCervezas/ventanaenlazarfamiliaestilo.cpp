@@ -26,8 +26,6 @@ VentanaEnlazarFamiliaEstilo::VentanaEnlazarFamiliaEstilo(Grafo * grafo, QWidget 
     else{
         ui->btnEnlazar->setEnabled(true);
     }
-
-
 }
 
 VentanaEnlazarFamiliaEstilo::~VentanaEnlazarFamiliaEstilo()
@@ -56,7 +54,6 @@ void VentanaEnlazarFamiliaEstilo::on_btnEnlazar_clicked()
     else{
         ui->btnEnlazar->setEnabled(true);
     }
-
 }
 
 void VentanaEnlazarFamiliaEstilo::on_comboFamilias_currentIndexChanged(int index)

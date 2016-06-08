@@ -1,8 +1,6 @@
 #ifndef LISTAADYACENCIA_H
 #define LISTAADYACENCIA_H
 
-#include "arraylist.h"
-#include "dlinkedlist.h"
 #include "nodocerveza.h"
 
 #include <QVector>
@@ -26,6 +24,7 @@ public:
     bool esVecino(int key, int value);
 
 private:
+    //Mapa que almacena los valores asociados a una llave cualquiera de tipo entero
     QMap<int,QVector<int> > mapa;
 
 };

@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Inicialización de cada atributo recibido por parámetro
 NodoCerveza::NodoCerveza(QString pNombre, QString pDescripcion, QString pTipoDeFermentacion, QString pTiempoDeFermentacion, QString pTemperatura, QString pColor, QString pTipoNodo, QString pCuerpo, QString pPrecio)
 {
     nombre = pNombre;
@@ -16,8 +17,9 @@ NodoCerveza::NodoCerveza(QString pNombre, QString pDescripcion, QString pTipoDeF
 }
 
 NodoCerveza::~NodoCerveza(){
-
 }
+
+//Getter de cada atributo
 
 QString NodoCerveza::getNombre(){
     return nombre;

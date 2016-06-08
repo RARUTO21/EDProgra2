@@ -5,6 +5,7 @@
 
 #include "grafo.h"
 
+
 namespace Ui {
 class VentanaPrincipal;
 }
@@ -42,7 +43,7 @@ private slots:
 
 private:
     Ui::VentanaPrincipal *ui;
-    Grafo grafo;
+    Grafo grafo; //Instancia de la clase controladora: Enlaza la parte lógica con la parte gráfica
 };
 
 #endif // VENTANAPRINCIPAL_H
