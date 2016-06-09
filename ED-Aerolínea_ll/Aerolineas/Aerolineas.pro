@@ -22,7 +22,11 @@ SOURCES += main.cpp\
     DijkstraAlgorithm.cpp \
     FloydAlgorithm.cpp \
     KruskalAlgorithm.cpp \
-    PrimAlgorithm.cpp
+    PrimAlgorithm.cpp \
+    solve.cpp \
+    solvedijkstra.cpp \
+    solvekruskal.cpp \
+    solveprim.cpp
 
 HEADERS  += widget.h \
     arraylist.h \
@@ -32,9 +36,19 @@ HEADERS  += widget.h \
     matrizadyacencia.h \
     nodociudad.h \
     doublespinboxdelegate.h \
-    renderarea.h
+    renderarea.h \
+    solve.h \
+    solvedijkstra.h \
+    solvekruskal.h \
+    solveprim.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    solve.ui \
+    solvedijkstra.ui \
+    solvekruskal.ui \
+    solveprim.ui
 
 RESOURCES += \
     imagenes.qrc
+
+DISTFILES +=

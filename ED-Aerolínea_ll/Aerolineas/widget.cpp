@@ -3,6 +3,10 @@
 #include <QStandardItemModel>
 #include <QTableWidgetItem>
 #include "doublespinboxdelegate.h"
+#include "solve.h"
+#include "solvedijkstra.h"
+#include "solvekruskal.h"
+#include "solveprim.h"
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -84,31 +88,32 @@ void Widget::on_pushButtonAgregar_clicked()
 void Widget::on_btnFloyd_clicked()
 {
     // Algoritmo de Floyd
+    solve * Widget = new solve();
+    Widget ->show();
+    close();
 
-    /*for (int k =0; k<W->grafo->getSize();k++)
-        for (int i =0; i<W->grafo->getSize();i++)
-            for (int j =0; j<W->grafo->getSize();j++)
-            {
-               float peso = A[i][k] + A[k][j];
-               if(peso < Grafo::INFINITO)
-                   if (peso < A[i][j])
-                       A[i][j] = peso ;}*/
 
 }
 
 void Widget::on_btnDijkstra_clicked()
 {
-
+    solveDijkstra * Widget = new solveDijkstra();
+    Widget ->show();
+    close();
 }
 
 void Widget::on_btnPrim_clicked()
 {
-
+    solvePrim * Widget = new solvePrim();
+    Widget ->show();
+    close();
 }
 
 void Widget::on_btnKruskal_clicked()
 {
-
+    solveKruskal * Widget = new solveKruskal();
+    Widget ->show();
+    close();
 }
 
 void Widget::on_pbAddArista_clicked()
