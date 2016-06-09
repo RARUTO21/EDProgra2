@@ -18,7 +18,11 @@ SOURCES += main.cpp\
     matrizadyacencia.cpp \
     nodociudad.cpp \
     doublespinboxdelegate.cpp \
-    renderarea.cpp
+    renderarea.cpp \
+    DijkstraAlgorithm.cpp \
+    FloydAlgorithm.cpp \
+    KruskalAlgorithm.cpp \
+    PrimAlgorithm.cpp
 
 HEADERS  += widget.h \
     arraylist.h \
